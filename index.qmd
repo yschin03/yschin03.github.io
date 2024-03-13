@@ -1,11 +1,9 @@
 ---
-title: "Yin Shuen's Website"
+title: "About Me"
 ---
 
-This is a Quarto website.
+Hi! I am Yin Shuen, a Year 2 Communications and New Media student. In my spare time, I enjoy watching movies, checking out new food places and listening to songs on Spotify.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+The wide variety of song genres and artists available on streaming platform Spotify provides me with many options when it comes to song choices. This makes me interested in diving deeper in data insights regarding the song offerings in Spotify.
 
-```{r}
-1 + 1
-```
+![*One of my favourite cafes!*](images/photo_2024-01-15 21.38.07.jpeg){alt="One of my favourite cafes!" fig-align="left" width="400"}
