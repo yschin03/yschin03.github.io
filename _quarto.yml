@@ -8,7 +8,7 @@ website:
     left:
       - href: index.qmd
         text: About Me
-      - href: myproject.qmd
+      - href: myprojects.qmd
         text: My Project
       - href: datastory.qmd
         text: Data Story
