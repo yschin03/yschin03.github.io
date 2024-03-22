@@ -10,6 +10,8 @@ website:
         text: About Me
       - href: myproject.qmd
         text: My Project
+      - href: datastory.qmd
+        text: Data Story
 
 format:
   html:
