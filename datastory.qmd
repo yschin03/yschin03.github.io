@@ -4,4 +4,8 @@ format: html
 editor: visual
 ---
 
-## 
+## Data visualisation
+
+```{=html}
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/Shiny_visualisation_NM2207/"> </iframe>
+```
