@@ -1,34 +1,20 @@
-# Load the necessary libraries
 library(shiny)
-library(dplyr)
 
-# Assuming df is a dataframe with a column 'year'
-df <- df %>%
-  arrange(desc(year)) # Arrange years in descending order
-
-# Define the UI
+# Define UI for application that draws a histogram
 ui <- fluidPage(
-  titlePanel("Song Data by Year"),
   sidebarLayout(
-    sidebarPanel(
-      selectInput(inputId = "year_select",
-                  label = "Select Year",
-                  choices = unique(df$year))
-    ),
-    mainPanel(
-      tableOutput("song_table")
-    )
+    sidebarPanel(sliderInput("samplesize","Sample Size:",min = 100,max = 10000,value = 1000)),
+    mainPanel(plotOutput("distPlot"))
   )
 )
 
-# Define the server logic
+# Define server logic required to draw a histogram
 server <- function(input, output) {
-  output$song_table <- renderTable({
-    df %>%
-      filter(year == input$year_select) %>%
-      select(artist, song, explicit, popularity, speechiness, tempo, genre)
-  })
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$samplesize),col='darkorchid',xlab="Sample",main="Standard Normally Distributed Sample")},
+    height=300
+  )
 }
 
-# Run the app
-shinyApp(ui, server)
+# Run the application 
+shinyApp(ui = ui, server = server)
