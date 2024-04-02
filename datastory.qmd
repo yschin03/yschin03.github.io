@@ -1,7 +1,6 @@
 ---
 title: "Data Story"
-format: html
-editor: visual
+
 ---
 
 ## Dataset filtered by year
@@ -9,3 +8,102 @@ editor: visual
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/Shiny_visualisation_NM2207/"> </iframe>
 ```
+
+## 1. Total number of songs versus genre (column chart)
+Let us analyse the total number of songs for the top 30 genre types.
+
+
+
+```{r, eval=TRUE, echo=FALSE}
+
+library(tidyverse)
+df <- read_csv("df.csv")
+df_grouped <- group_by(df, genre)
+
+df_summarised <- summarise(df_grouped, song = n())
+
+df_arranged <- arrange(df_summarised, desc(song))
+df_head <- head(df_arranged, 30)
+
+ggplot(df_head, aes(x = reorder(genre, song), y = song)) +
+  geom_col(fill = "steelblue", width = 0.7) +
+  coord_flip() +
+  labs(x = "Genre", y = "Number of songs", title = "Top 30 genres by number of songs") +
+  theme_minimal()
+
+```  
+
+
+## 3. Songs per year 
+```{r, echo=FALSE}
+
+# Group by 'year' and count the number of songs, then sort by 'song' count in descending order and then by 'year'
+df_grouped <- df %>%
+  group_by(year) %>%
+  summarise(song = n()) %>%
+  arrange(desc(song), year)
+
+df_grouped
+
+# Create area plot
+area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
+  geom_area(fill = "green", color = "green", alpha = 0.5) +
+  geom_point(color = "green", size = 2) +
+  labs(title = "Year by Year Songs collection", x = "Year", y = "Total songs") +
+  theme_minimal() 
+
+area_plot
+
+```  
+
+
+## 4. songs per artist top 50 (bar chart)  
+```{r}
+
+# Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50
+df_grouped <- df %>%
+  group_by(artist) %>%
+  summarise(song = n()) %>%
+  arrange(desc(song)) %>%
+  head(50)
+df_grouped
+
+df_grouped$artist <- as.character(df_grouped$artist)
+
+# Create bar plot
+ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
+  geom_bar(stat = "identity", width = 0.8, color = "black") +
+  labs(title = "List of Songs Recorded by Each Singer", x = "Artist", y = "Total Songs") +
+  geom_text(aes(label = song), vjust = -0.5, size = 3) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  guides(fill = FALSE)
+
+```  
+
+## 5. popularity vs songs, top 25 songs (line graph - connecting the points)  
+```{r, echo=FALSE}
+library(ggplot2)
+library(dplyr)
+
+
+# Arrange dataframe by 'popularity' in descending order and select top 25 rows
+df_top <- df %>%
+  arrange(desc(popularity)) %>%
+  select(popularity, song) %>%
+   head(25) 
+df_top
+
+
+
+# Create line plot
+ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Top 25 songs in Spotify", x = "Song", y = "Popularity") +
+  scale_color_manual(values = "green") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  guides(fill = FALSE)
+
+```  

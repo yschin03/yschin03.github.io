@@ -1,0 +1,353 @@
+install.packages('rsconnect')
+rsconnect::setAccountInfo(name='edwxgo-yin0shuen-chin', token='1E2DB8D66D68057A6A967920CD1031EC', secret='KqDM4lbsuF9akAcI4+djkTS3eGtZ7sThD0yyspQW')
+
+
+notes:
+first: clean data
+> remove duplicate values; remove NA values
+
+What determines the extent of popularity of songs in Spotify?
+  
+note: i am using the following columns: 
+There are 18 columns in this dataset containing different features about the top songs in this dataset. 
+I will be focusing on 'artist', 'song', 'explicit', 'year', 'popularity', 'speechiness', 'tempo', 'genre'.
+
+
+possible visualisations:
+  - total number of songs versus genre (histogram?)
+  - genres based on popularity (histogram)
+  - songs per year (area plot)
+  - songs per artist (bar chart)
+  - popularity vs songs, top 25 songs (line graph - connecting the points)
+  - songs which are explicit content (pie chart)
+  - year vs explicit content (area plot)
+  - popularity versus explicit content (box plot)
+  - tempo vs popularity
+  - speechiness vs popularity
+
+## CLEANING DATA
+
+```{r}
+install.packages("ggplot2")
+```
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+```
+
+##first read file, remove duplicate values, remove NA, select relevant columns
+I will be focusing on these columns only: 'artist', 'song', 'explicit', 'year', 'popularity', 'speechiness', 'tempo', 'genre'.
+```{r}
+df <- read_csv("songs_normalize.csv") %>%
+  unique() %>%
+  na.omit() %>%
+  select(artist, song, explicit, year, popularity, speechiness, tempo, genre)
+
+df
+
+write.csv(df, "/Users/yschin/AY2324 Sem 2 Course Content/NM2207/yschin03.github.io/df.csv", row.names = FALSE)
+```
+
+
+##NOTE: USE df FOR DATASET FROM HERE ONWARDS
+
+
+useful links for ref:
+  gganimate: https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/
+  can use transition_reveal for line graphs like the year vs songs one
+
+## Data visualisations:
+## 1. total number of songs versus genre (histogram?)
+  
+```{r}
+#App1
+#shiny app following example 1
+
+```  
+  
+## 2. genres based on popularity (histogram)  
+```{r setup, include=FALSE}
+
+```  
+  
+## 3. songs per year (area plot)  
+```{r}
+
+# Group by 'year' and count the number of songs, then sort by 'song' count in descending order and then by 'year'
+df_grouped <- df %>%
+  group_by(year) %>%
+  summarise(song = n()) %>%
+  arrange(desc(song), year)
+
+df_grouped
+
+# Create area plot
+area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
+  geom_area(fill = "green", color = "green", alpha = 0.5) +
+  geom_point(color = "green", size = 2) +
+  labs(title = "Year by Year Songs collection", x = "Year", y = "Total songs") +
+  theme_minimal() 
+
+area_plot
+
+```  
+  
+## 4. songs per artist top 50 (bar chart)  
+```{r setup, include=FALSE}
+
+# Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50
+df_grouped <- df %>%
+  group_by(artist) %>%
+  summarise(song = n()) %>%
+  arrange(desc(song)) %>%
+  head(50)
+df_grouped
+
+df_grouped$artist <- as.character(df_grouped$artist)
+
+# Create bar plot
+ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
+  geom_bar(stat = "identity", width = 0.8, color = "black") +
+  labs(title = "List of Songs Recorded by Each Singer", x = "Artist", y = "Total Songs") +
+  geom_text(aes(label = song), vjust = -0.5, size = 3) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  guides(fill = FALSE)
+
+```  
+  
+## 5. popularity vs songs, top 25 songs (line graph - connecting the points)  
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+
+
+# Arrange dataframe by 'popularity' in descending order and select top 25 rows
+df_top <- df %>%
+  arrange(desc(popularity)) %>%
+  select(popularity, song) %>%
+   head(25) 
+df_top
+
+# Create line plot
+ggplot(df_top, aes(x = song, y = popularity, color = artist)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "<b>Top 25 songs in Spotify", x = "Song", y = "Popularity") +
+  scale_color_manual(values = "green") +
+  theme_minimal()
+
+```  
+  
+## 6. songs which are explicit content (pie chart)  
+```{r setup, include=FALSE}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
+# Assuming the dataset is loaded in the dataframe 'df'
+df <- read.csv("songs_normalize.csv")
+
+# Group the data by 'explicit'
+df_grouped <- df %>%
+  group_by(explicit) %>%
+  summarise(total_songs =n())
+
+df_grouped
+
+# Calculate the percentage of each variable
+df_grouped <- df_grouped %>%
+  mutate(percent = total_songs/sum(total_songs)*100)
+
+# Sort the data by 'total_songs'
+df_sorted <- df_grouped %>%
+  arrange(desc(total_songs))
+
+# Create a pie chart
+pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("blue", "darkred")) +
+  geom_text(aes(label = paste0(round(percent, 1), "%")),
+            position = position_stack(vjust = 0.5)) +
+  labs(title = "Songs having explicit content",
+       x = NULL,
+       y = NULL,
+       fill = NULL,
+       color = NULL) +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+# Display the plot
+print(pie_chart)
+```  
+  
+## 7. year vs explicit content (area plot)  
+```{r setup, include=FALSE}
+
+```  
+  
+## 8. popularity versus explicit content (box plot)  
+```{r setup, include=FALSE}
+
+```  
+  
+## 9. tempo vs popularity  
+```{r setup, include=FALSE}
+
+```  
+  
+## 10. speechiness vs popularity  
+```{r setup, include=FALSE}
+
+```  
+  
+
+```{r}
+
+
+
+```
+
+
+```{r}
+
+
+# Invoke the package
+library(shiny)
+# Run an example from the library
+runExample("08_html")
+```
+
+
+customised app:
+# Load the necessary libraries
+library(shiny)
+library(dplyr)
+
+# Assuming df is a dataframe with a column 'year'
+df <- df %>%
+  arrange(desc(year)) # Arrange years in descending order
+
+# Define the UI
+ui <- fluidPage(
+  titlePanel("Song Data by Year"),
+  sidebarLayout(
+    sidebarPanel(
+      selectInput(inputId = "year_select",
+                  label = "Select Year",
+                  choices = unique(df$year))
+    ),
+    mainPanel(
+      tableOutput("song_table")
+    )
+  )
+)
+
+# Define the server logic
+server <- function(input, output) {
+  output$song_table <- renderTable({
+    df %>%
+      filter(year == input$year_select) %>%
+      select(artist, song, explicit, popularity, speechiness, tempo, genre)
+  })
+}
+
+# Run the app
+shinyApp(ui, server)
+
+previous app
+
+library(shiny)
+
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+  sidebarLayout(
+    sidebarPanel(sliderInput("samplesize","Sample Size:",min = 100,max = 10000,value = 1000)),
+    mainPanel(plotOutput("distPlot"))
+  )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  output$distPlot <- renderPlot({
+    hist(rnorm(input$samplesize),col='darkorchid',xlab="Sample",main="Standard Normally Distributed Sample")},
+    height=300
+  )
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+
+
+
+
+
+
+
+##example shiny app 01_hello code parked here
+## code for example 01_hello
+
+library(shiny)
+
+# Define UI for app that draws a histogram ----
+ui <- fluidPage(
+  
+  # App title ----
+  titlePanel("Hello Shiny!"),
+  
+  # Sidebar layout with input and output definitions ----
+  sidebarLayout(
+    
+    # Sidebar panel for inputs ----
+    sidebarPanel(
+      
+      # Input: Slider for the number of bins ----
+      sliderInput(inputId = "bins",
+                  label = "Number of bins:",
+                  min = 1,
+                  max = 50,
+                  value = 30)
+      
+    ),
+    
+    # Main panel for displaying outputs ----
+    mainPanel(
+      
+      # Output: Histogram ----
+      plotOutput(outputId = "distPlot")
+      
+    )
+  )
+)
+
+# Define server logic required to draw a histogram ----
+server <- function(input, output) {
+  
+  # Histogram of the Old Faithful Geyser Data ----
+  # with requested number of bins
+  # This expression that generates a histogram is wrapped in a call
+  # to renderPlot to indicate that:
+  #
+  # 1. It is "reactive" and therefore should be automatically
+  #    re-executed when inputs (input$bins) change
+  # 2. Its output type is a plot
+  output$distPlot <- renderPlot({
+    
+    x    <- faithful$waiting
+    bins <- seq(min(x), max(x), length.out = input$bins + 1)
+    
+    hist(x, breaks = bins, col = "#75AADB", border = "white",
+         xlab = "Waiting time to next eruption (in mins)",
+         main = "Histogram of waiting times")
+    
+  })
+  
+}
+
+# Create Shiny app ----
+shinyApp(ui = ui, server = server)
