@@ -173,5 +173,12 @@
     "title": "Data Story",
     "section": "7. Year vs Explicit Content",
     "text": "7. Year vs Explicit Content\nThe area plot below illustrates the relationship between the year of song published and explicit songs."
+  },
+  {
+    "objectID": "datastory.html#popularity-versus-explicit-songs",
+    "href": "datastory.html#popularity-versus-explicit-songs",
+    "title": "Data Story",
+    "section": "8. Popularity versus Explicit Songs",
+    "text": "8. Popularity versus Explicit Songs\nThe bar plot below visualises the popularity of songs based on whether they are explicit or not.\nTo put in analysis"
   }
 ]

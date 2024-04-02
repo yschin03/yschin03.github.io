@@ -58,11 +58,21 @@ useful links for ref:
   can use transition_reveal for line graphs like the year vs songs one
 
 ## Data visualisations:
-## 1. total number of songs versus genre (histogram?)
+## 1. total number of songs versus genre (column chart)
   
 ```{r}
-#App1
-#shiny app following example 1
+df_grouped <- df %>%
+  group_by(genre) %>%
+  summarise(song = n()) %>%
+  arrange(desc(song)) %>%
+  head(30)
+df_grouped
+
+ggplot(df_grouped, aes(x = reorder(genre, song), y = song)) +
+  geom_col(fill = "steelblue", width = 0.7) +
+  coord_flip() +
+  labs(x = "Genre", y = "Number of songs", title = "Top 30 genres by number of songs") +
+  theme_minimal()
 
 ```  
   
@@ -118,7 +128,7 @@ ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
 ```  
   
 ## 5. popularity vs songs, top 25 songs (line graph - connecting the points)  
-```{r setup, include=FALSE}
+```{r, echo=FALSE}
 library(ggplot2)
 library(dplyr)
 
@@ -130,24 +140,22 @@ df_top <- df %>%
    head(25) 
 df_top
 
+
+
 # Create line plot
-ggplot(df_top, aes(x = song, y = popularity, color = artist)) +
+ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
   geom_line() +
   geom_point() +
-  labs(title = "<b>Top 25 songs in Spotify", x = "Song", y = "Popularity") +
+  labs(title = "Top 25 songs in Spotify", x = "Song", y = "Popularity") +
   scale_color_manual(values = "green") +
-  theme_minimal()
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  guides(fill = FALSE)
 
 ```  
   
 ## 6. songs which are explicit content (pie chart)  
 ```{r setup, include=FALSE}
-# Load necessary libraries
-library(ggplot2)
-library(dplyr)
-
-# Assuming the dataset is loaded in the dataframe 'df'
-df <- read.csv("songs_normalize.csv")
 
 # Group the data by 'explicit'
 df_grouped <- df %>%
@@ -164,11 +172,13 @@ df_grouped <- df_grouped %>%
 df_sorted <- df_grouped %>%
   arrange(desc(total_songs))
 
+df_sorted
+
 # Create a pie chart
 pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
   geom_bar(width = 1, stat = "identity") +
   coord_polar("y", start = 0) +
-  scale_fill_manual(values = c("blue", "darkred")) +
+  scale_fill_manual(values = c("blue", "red")) +
   geom_text(aes(label = paste0(round(percent, 1), "%")),
             position = position_stack(vjust = 0.5)) +
   labs(title = "Songs having explicit content",
@@ -186,7 +196,27 @@ print(pie_chart)
 ```  
   
 ## 7. year vs explicit content (area plot)  
-```{r setup, include=FALSE}
+```{r setup}
+library(ggplot2)
+
+df_explicit <- df %>%
+  filter(explicit = TRUE) %>%
+  count(year, sort = TRUE) %>%
+  arrange (year)
+
+df_explicit
+
+
+plot <- ggplot(df_explicit, aes(x = year, y = n)) +
+  geom_area(fill = "red", alpha = 0.5, width = 0.7) +
+  geom_point(colour = "red", size = 1) +
+  labs(title = "Number of explicit songs by year",
+       x = "Year",
+       y = "Total songs") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(plot)
 
 ```  
   

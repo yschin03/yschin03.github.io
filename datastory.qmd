@@ -165,7 +165,7 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
 print(pie_chart)
 ```
 
-## 7. Year vs Explicit Content 
+## 7. Year vs Explicit Content
 
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
@@ -187,5 +187,23 @@ plot <- ggplot(df_explicit, aes(x = year, y = n)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 print(plot)
+
+```
+
+## 8. Popularity versus Explicit Songs
+
+The bar plot below visualises the popularity of songs based on whether they are explicit or not.
+
+*To put in analysis*
+
+```{r, echo=FALSE}
+ggplot(df, aes(x = explicit, y = popularity, fill = explicit)) +
+  geom_boxplot() +
+  labs(title = "Popularity versus explicit songs",
+       x = "Explicit Songs",
+       y = "Popularity") +
+  scale_fill_manual(values = c("steelblue", "darkred")) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 ```
