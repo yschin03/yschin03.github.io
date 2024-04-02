@@ -11,6 +11,8 @@ title: "Data Story"
 
 Below, I will be analysing various song properties and their relationships with song popularity.
 
+The main question I wish to answer is "What determines the extent of popularity of songs in Spotify?"
+
 ## 1. Total number of songs per genre
 
 This column chart below allows us to analyse the total number of songs for the top 30 genre types.
