@@ -124,5 +124,12 @@
     "title": "Data Story",
     "section": "5. popularity vs songs, top 25 songs (line graph - connecting the points)",
     "text": "5. popularity vs songs, top 25 songs (line graph - connecting the points)\n\n\n# A tibble: 25 × 2\n   popularity song                \n        &lt;dbl&gt; &lt;chr&gt;               \n 1         89 Sweater Weather     \n 2         88 Another Love        \n 3         87 Without Me          \n 4         86 The Real Slim Shady \n 5         86 Wait a Minute!      \n 6         86 lovely (with Khalid)\n 7         85 'Till I Collapse    \n 8         85 Locked out of Heaven\n 9         85 Daddy Issues        \n10         85 The Nights          \n# ℹ 15 more rows"
+  },
+  {
+    "objectID": "datastory.html#songs-which-are-explicit-content-pie-chart",
+    "href": "datastory.html#songs-which-are-explicit-content-pie-chart",
+    "title": "Data Story",
+    "section": "6. songs which are explicit content (pie chart)",
+    "text": "6. songs which are explicit content (pie chart)\n\n\n# A tibble: 2 × 2\n  explicit total_songs\n  &lt;lgl&gt;          &lt;int&gt;\n1 FALSE           1404\n2 TRUE             537\n\n\n# A tibble: 2 × 3\n  explicit total_songs percent\n  &lt;lgl&gt;          &lt;int&gt;   &lt;dbl&gt;\n1 FALSE           1404    72.3\n2 TRUE             537    27.7"
   }
 ]

@@ -148,6 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#songs-per-year" id="toc-songs-per-year" class="nav-link" data-scroll-target="#songs-per-year">3. Songs per year</a></li>
   <li><a href="#songs-per-artist-top-50-bar-chart" id="toc-songs-per-artist-top-50-bar-chart" class="nav-link" data-scroll-target="#songs-per-artist-top-50-bar-chart">4. songs per artist top 50 (bar chart)</a></li>
   <li><a href="#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" id="toc-popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" class="nav-link" data-scroll-target="#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points">5. popularity vs songs, top 25 songs (line graph - connecting the points)</a></li>
+  <li><a href="#songs-which-are-explicit-content-pie-chart" id="toc-songs-which-are-explicit-content-pie-chart" class="nav-link" data-scroll-target="#songs-which-are-explicit-content-pie-chart">6. songs which are explicit content (pie chart)</a></li>
   </ul>
 </nav>
     </div>
@@ -295,6 +296,28 @@ of ggplot2 3.3.4.</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="songs-which-are-explicit-content-pie-chart" class="level2">
+<h2 class="anchored" data-anchor-id="songs-which-are-explicit-content-pie-chart">6. songs which are explicit content (pie chart)</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  explicit total_songs
+  &lt;lgl&gt;          &lt;int&gt;
+1 FALSE           1404
+2 TRUE             537</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  explicit total_songs percent
+  &lt;lgl&gt;          &lt;int&gt;   &lt;dbl&gt;
+1 FALSE           1404    72.3
+2 TRUE             537    27.7</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="datastory_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 

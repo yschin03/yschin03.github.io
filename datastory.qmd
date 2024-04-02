@@ -107,3 +107,44 @@ ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
   guides(fill = FALSE)
 
 ```  
+
+## 6. songs which are explicit content (pie chart)  
+```{r, echo=FALSE}
+
+# Group the data by 'explicit'
+df_grouped <- df %>%
+  group_by(explicit) %>%
+  summarise(total_songs =n())
+
+df_grouped
+
+# Calculate the percentage of each variable
+df_grouped <- df_grouped %>%
+  mutate(percent = total_songs/sum(total_songs)*100)
+
+# Sort the data by 'total_songs'
+df_sorted <- df_grouped %>%
+  arrange(desc(total_songs))
+
+df_sorted
+
+# Create a pie chart
+pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start = 0) +
+  scale_fill_manual(values = c("blue", "red")) +
+  geom_text(aes(label = paste0(round(percent, 1), "%")),
+            position = position_stack(vjust = 0.5)) +
+  labs(title = "Songs having explicit content",
+       x = NULL,
+       y = NULL,
+       fill = NULL,
+       color = NULL) +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+# Display the plot
+print(pie_chart)
+```  
