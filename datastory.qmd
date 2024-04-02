@@ -52,8 +52,8 @@ df_grouped <- df %>%
 
 # Create area plot
 area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
-  geom_area(fill = "green", color = "green", alpha = 0.5) +
-  geom_point(color = "green", size = 2) +
+  geom_area(fill = "mediumpurple", color = "mediumpurple", alpha = 0.5) +
+  geom_point(color = "mediumpurple", size = 2) +
   labs(title = "Year by Year Songs collection", x = "Year", y = "Total songs") +
   theme_minimal() 
 
