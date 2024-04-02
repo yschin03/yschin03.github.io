@@ -108,8 +108,8 @@
     "objectID": "datastory.html#songs-per-year",
     "href": "datastory.html#songs-per-year",
     "title": "Data Story",
-    "section": "3. Songs per year",
-    "text": "3. Songs per year"
+    "section": "3. Songs Per Year",
+    "text": "3. Songs Per Year\nThe area plot below consolidates the number of songs per year between 1998 and 2020."
   },
   {
     "objectID": "datastory.html#songs-per-artist-top-50-bar-chart",
@@ -131,5 +131,47 @@
     "title": "Data Story",
     "section": "6. songs which are explicit content (pie chart)",
     "text": "6. songs which are explicit content (pie chart)"
+  },
+  {
+    "objectID": "datastory.html#year-vs-explicit-content-area-plot",
+    "href": "datastory.html#year-vs-explicit-content-area-plot",
+    "title": "Data Story",
+    "section": "7. year vs explicit content (area plot)",
+    "text": "7. year vs explicit content (area plot)"
+  },
+  {
+    "objectID": "datastory.html#total-number-of-songs-per-genre",
+    "href": "datastory.html#total-number-of-songs-per-genre",
+    "title": "Data Story",
+    "section": "1. Total number of songs per genre",
+    "text": "1. Total number of songs per genre\nThis column chart below allows us to analyse the total number of songs for the top 30 genre types."
+  },
+  {
+    "objectID": "datastory.html#songs-per-artist---top-50-artists",
+    "href": "datastory.html#songs-per-artist---top-50-artists",
+    "title": "Data Story",
+    "section": "4. Songs Per Artist - Top 50 Artists",
+    "text": "4. Songs Per Artist - Top 50 Artists\nThe bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+  },
+  {
+    "objectID": "datastory.html#top-25-songs-based-on-popularity",
+    "href": "datastory.html#top-25-songs-based-on-popularity",
+    "title": "Data Story",
+    "section": "5. Top 25 Songs Based On Popularity",
+    "text": "5. Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
+  },
+  {
+    "objectID": "datastory.html#songs-containing-explicit-content",
+    "href": "datastory.html#songs-containing-explicit-content",
+    "title": "Data Story",
+    "section": "6. Songs Containing Explicit Content",
+    "text": "6. Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n72.4% , or the majority of the songs in this dataset, are explicit."
+  },
+  {
+    "objectID": "datastory.html#year-vs-explicit-content",
+    "href": "datastory.html#year-vs-explicit-content",
+    "title": "Data Story",
+    "section": "7. Year vs Explicit Content",
+    "text": "7. Year vs Explicit Content\nThe area plot below illustrates the relationship between the year of song published and explicit songs."
   }
 ]

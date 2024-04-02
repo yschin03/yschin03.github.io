@@ -109,12 +109,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dataset-filtered-by-year" id="toc-dataset-filtered-by-year" class="nav-link active" data-scroll-target="#dataset-filtered-by-year">Dataset filtered by year</a></li>
-  <li><a href="#total-number-of-songs-versus-genre-column-chart" id="toc-total-number-of-songs-versus-genre-column-chart" class="nav-link" data-scroll-target="#total-number-of-songs-versus-genre-column-chart">1. Total number of songs versus genre (column chart)</a></li>
-  <li><a href="#songs-per-year" id="toc-songs-per-year" class="nav-link" data-scroll-target="#songs-per-year">3. Songs per year</a></li>
-  <li><a href="#songs-per-artist-top-50-bar-chart" id="toc-songs-per-artist-top-50-bar-chart" class="nav-link" data-scroll-target="#songs-per-artist-top-50-bar-chart">4. songs per artist top 50 (bar chart)</a></li>
-  <li><a href="#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" id="toc-popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" class="nav-link" data-scroll-target="#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points">5. popularity vs songs, top 25 songs (line graph - connecting the points)</a></li>
-  <li><a href="#songs-which-are-explicit-content-pie-chart" id="toc-songs-which-are-explicit-content-pie-chart" class="nav-link" data-scroll-target="#songs-which-are-explicit-content-pie-chart">6. songs which are explicit content (pie chart)</a></li>
+  <li><a href="#placeholder-shiny-app---to-be-customised" id="toc-placeholder-shiny-app---to-be-customised" class="nav-link active" data-scroll-target="#placeholder-shiny-app---to-be-customised">Placeholder shiny app - to be customised</a></li>
+  <li><a href="#data-visualisation" id="toc-data-visualisation" class="nav-link" data-scroll-target="#data-visualisation">Data Visualisation</a>
+  <ul class="collapse">
+  <li><a href="#total-number-of-songs-per-genre" id="toc-total-number-of-songs-per-genre" class="nav-link" data-scroll-target="#total-number-of-songs-per-genre">1. Total number of songs per genre</a></li>
+  <li><a href="#songs-per-year" id="toc-songs-per-year" class="nav-link" data-scroll-target="#songs-per-year">3. Songs Per Year</a></li>
+  <li><a href="#songs-per-artist---top-50-artists" id="toc-songs-per-artist---top-50-artists" class="nav-link" data-scroll-target="#songs-per-artist---top-50-artists">4. Songs Per Artist - Top 50 Artists</a></li>
+  <li><a href="#top-25-songs-based-on-popularity" id="toc-top-25-songs-based-on-popularity" class="nav-link" data-scroll-target="#top-25-songs-based-on-popularity">5. Top 25 Songs Based On Popularity</a></li>
+  <li><a href="#songs-containing-explicit-content" id="toc-songs-containing-explicit-content" class="nav-link" data-scroll-target="#songs-containing-explicit-content">6. Songs Containing Explicit Content</a></li>
+  <li><a href="#year-vs-explicit-content" id="toc-year-vs-explicit-content" class="nav-link" data-scroll-target="#year-vs-explicit-content">7. Year vs Explicit Content</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -138,13 +142,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="dataset-filtered-by-year" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-filtered-by-year">Dataset filtered by year</h2>
+<section id="placeholder-shiny-app---to-be-customised" class="level2">
+<h2 class="anchored" data-anchor-id="placeholder-shiny-app---to-be-customised">Placeholder shiny app - to be customised</h2>
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/Shiny_visualisation_NM2207/"> </iframe>
 </section>
-<section id="total-number-of-songs-versus-genre-column-chart" class="level2">
-<h2 class="anchored" data-anchor-id="total-number-of-songs-versus-genre-column-chart">1. Total number of songs versus genre (column chart)</h2>
-<p>Let us analyse the total number of songs for the top 30 genre types.</p>
+<section id="data-visualisation" class="level1">
+<h1>Data Visualisation</h1>
+<p>Below, I will be analysing various song properties and their relationships with song popularity.</p>
+<section id="total-number-of-songs-per-genre" class="level2">
+<h2 class="anchored" data-anchor-id="total-number-of-songs-per-genre">1. Total number of songs per genre</h2>
+<p>This column chart below allows us to analyse the total number of songs for the top 30 genre types.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
@@ -152,38 +159,55 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 <section id="songs-per-year" class="level2">
-<h2 class="anchored" data-anchor-id="songs-per-year">3. Songs per year</h2>
+<h2 class="anchored" data-anchor-id="songs-per-year">3. Songs Per Year</h2>
+<p>The area plot below consolidates the number of songs per year between 1998 and 2020.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="songs-per-artist-top-50-bar-chart" class="level2">
-<h2 class="anchored" data-anchor-id="songs-per-artist-top-50-bar-chart">4. songs per artist top 50 (bar chart)</h2>
+<section id="songs-per-artist---top-50-artists" class="level2">
+<h2 class="anchored" data-anchor-id="songs-per-artist---top-50-artists">4. Songs Per Artist - Top 50 Artists</h2>
+<p>The bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.</p>
+<p><em>The artist with the most number of featured songs is Rihanna, with 25 songs.</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" class="level2">
-<h2 class="anchored" data-anchor-id="popularity-vs-songs-top-25-songs-line-graph---connecting-the-points">5. popularity vs songs, top 25 songs (line graph - connecting the points)</h2>
+<section id="top-25-songs-based-on-popularity" class="level2">
+<h2 class="anchored" data-anchor-id="top-25-songs-based-on-popularity">5. Top 25 Songs Based On Popularity</h2>
+<p>Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.</p>
+<p><em>The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="songs-which-are-explicit-content-pie-chart" class="level2">
-<h2 class="anchored" data-anchor-id="songs-which-are-explicit-content-pie-chart">6. songs which are explicit content (pie chart)</h2>
+<section id="songs-containing-explicit-content" class="level2">
+<h2 class="anchored" data-anchor-id="songs-containing-explicit-content">6. Songs Containing Explicit Content</h2>
+<p>This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.</p>
+<p><em>72.4% , or the majority of the songs in this dataset, are explicit.</em></p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
+<section id="year-vs-explicit-content" class="level2">
+<h2 class="anchored" data-anchor-id="year-vs-explicit-content">7. Year vs Explicit Content</h2>
+<p>The area plot below illustrates the relationship between the year of song published and explicit songs.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="datastory_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

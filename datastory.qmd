@@ -1,18 +1,19 @@
 ---
 title: "Data Story"
-
 ---
 
-## Dataset filtered by year
+## Placeholder shiny app - to be customised
 
 ```{=html}
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/Shiny_visualisation_NM2207/"> </iframe>
 ```
+# Data Visualisation
 
-## 1. Total number of songs versus genre (column chart)
-Let us analyse the total number of songs for the top 30 genre types.
+Below, I will be analysing various song properties and their relationships with song popularity.
 
+## 1. Total number of songs per genre
 
+This column chart below allows us to analyse the total number of songs for the top 30 genre types.
 
 ```{r, eval=TRUE, echo=FALSE, message = FALSE}
 
@@ -31,10 +32,12 @@ ggplot(df_head, aes(x = reorder(genre, song), y = song)) +
   labs(x = "Genre", y = "Number of songs", title = "Top 30 genres by number of songs") +
   theme_minimal()
 
-```  
+```
 
+## 3. Songs Per Year
 
-## 3. Songs per year 
+The area plot below consolidates the number of songs per year between 1998 and 2020.
+
 ```{r, echo=FALSE}
 
 # Group by 'year' and count the number of songs, then sort by 'song' count in descending order and then by 'year'
@@ -42,6 +45,8 @@ df_grouped <- df %>%
   group_by(year) %>%
   summarise(song = n()) %>%
   arrange(desc(song), year)
+
+
 
 # Create area plot
 area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
@@ -52,10 +57,14 @@ area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
 
 area_plot
 
-```  
+```
 
+## 4. Songs Per Artist - Top 50 Artists
 
-## 4. songs per artist top 50 (bar chart)  
+The bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.
+
+*The artist with the most number of featured songs is Rihanna, with 25 songs.*
+
 ```{r, echo=FALSE, message = FALSE, error = FALSE, warning = FALSE}
 
 # Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50
@@ -70,15 +79,20 @@ df_grouped$artist <- as.character(df_grouped$artist)
 # Create bar plot
 ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
   geom_bar(stat = "identity", width = 0.8, color = "black") +
-  labs(title = "List of Songs Recorded by Each Singer", x = "Artist", y = "Total Songs") +
+  labs(title = "List of Songs Recorded by Each Artist", x = "Artist", y = "Total Songs") +
   geom_text(aes(label = song), vjust = -0.5, size = 3) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   guides(fill = FALSE)
 
-```  
+```
 
-## 5. popularity vs songs, top 25 songs (line graph - connecting the points)  
+## 5. Top 25 Songs Based On Popularity
+
+Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
+
+*The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.*
+
 ```{r, echo=FALSE}
 library(ggplot2)
 library(dplyr)
@@ -97,15 +111,20 @@ df_top <- df %>%
 ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
   geom_line() +
   geom_point() +
-  labs(title = "Top 25 songs in Spotify", x = "Song", y = "Popularity") +
+  labs(title = "Top 25 songs", x = "Song", y = "Popularity") +
   scale_color_manual(values = "green") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   guides(fill = FALSE)
 
-```  
+```
 
-## 6. songs which are explicit content (pie chart)  
+## 6. Songs Containing Explicit Content
+
+This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
+
+*72.4% , or the majority of the songs in this dataset, are explicit.*
+
 ```{r, echo=FALSE}
 
 # Group the data by 'explicit'
@@ -132,7 +151,7 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
   scale_fill_manual(values = c("blue", "red")) +
   geom_text(aes(label = paste0(round(percent, 1), "%")),
             position = position_stack(vjust = 0.5)) +
-  labs(title = "Songs having explicit content",
+  labs(title = "Songs containing explicit content",
        x = NULL,
        y = NULL,
        fill = NULL,
@@ -144,4 +163,29 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
 
 # Display the plot
 print(pie_chart)
-```  
+```
+
+## 7. Year vs Explicit Content 
+
+The area plot below illustrates the relationship between the year of song published and explicit songs.
+
+```{r, echo = FALSE, message = FALSE}
+library(ggplot2)
+
+df_explicit <- df %>%
+  filter(explicit = TRUE) %>%
+  count(year, sort = TRUE) %>%
+  arrange (year)
+
+plot <- ggplot(df_explicit, aes(x = year, y = n)) +
+  geom_area(fill = "red", alpha = 0.5) +
+  geom_point(colour = "red", size = 1) +
+  labs(title = "Number of explicit songs by year",
+       x = "Year",
+       y = "Total songs") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(plot)
+
+```
