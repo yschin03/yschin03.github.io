@@ -14,7 +14,7 @@ Let us analyse the total number of songs for the top 30 genre types.
 
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r, eval=TRUE, echo=FALSE, message = FALSE}
 
 library(tidyverse)
 df <- read_csv("df.csv")
@@ -43,8 +43,6 @@ df_grouped <- df %>%
   summarise(song = n()) %>%
   arrange(desc(song), year)
 
-df_grouped
-
 # Create area plot
 area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
   geom_area(fill = "green", color = "green", alpha = 0.5) +
@@ -58,7 +56,7 @@ area_plot
 
 
 ## 4. songs per artist top 50 (bar chart)  
-```{r}
+```{r, echo=FALSE, message = FALSE, error = FALSE, warning = FALSE}
 
 # Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50
 df_grouped <- df %>%
@@ -66,7 +64,6 @@ df_grouped <- df %>%
   summarise(song = n()) %>%
   arrange(desc(song)) %>%
   head(50)
-df_grouped
 
 df_grouped$artist <- as.character(df_grouped$artist)
 
@@ -92,7 +89,7 @@ df_top <- df %>%
   arrange(desc(popularity)) %>%
   select(popularity, song) %>%
    head(25) 
-df_top
+
 
 
 
@@ -116,7 +113,7 @@ df_grouped <- df %>%
   group_by(explicit) %>%
   summarise(total_songs =n())
 
-df_grouped
+
 
 # Calculate the percentage of each variable
 df_grouped <- df_grouped %>%
@@ -126,7 +123,7 @@ df_grouped <- df_grouped %>%
 df_sorted <- df_grouped %>%
   arrange(desc(total_songs))
 
-df_sorted
+
 
 # Create a pie chart
 pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +

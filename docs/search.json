@@ -102,34 +102,34 @@
     "href": "datastory.html#total-number-of-songs-versus-genre-column-chart",
     "title": "Data Story",
     "section": "1. Total number of songs versus genre (column chart)",
-    "text": "1. Total number of songs versus genre (column chart)\nLet us analyse the total number of songs for the top 30 genre types.\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nRows: 1941 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): artist, song, genre\ndbl (4): year, popularity, speechiness, tempo\nlgl (1): explicit\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+    "text": "1. Total number of songs versus genre (column chart)\nLet us analyse the total number of songs for the top 30 genre types."
   },
   {
     "objectID": "datastory.html#songs-per-year",
     "href": "datastory.html#songs-per-year",
     "title": "Data Story",
     "section": "3. Songs per year",
-    "text": "3. Songs per year\n\n\n# A tibble: 23 × 2\n    year  song\n   &lt;dbl&gt; &lt;int&gt;\n 1  2012   113\n 2  2017   110\n 3  2001   106\n 4  2018   104\n 5  2010   103\n 6  2005   101\n 7  2014   100\n 8  2016    98\n 9  2011    96\n10  2004    95\n# ℹ 13 more rows"
+    "text": "3. Songs per year"
   },
   {
     "objectID": "datastory.html#songs-per-artist-top-50-bar-chart",
     "href": "datastory.html#songs-per-artist-top-50-bar-chart",
     "title": "Data Story",
     "section": "4. songs per artist top 50 (bar chart)",
-    "text": "4. songs per artist top 50 (bar chart)\n\n# Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50\ndf_grouped &lt;- df %&gt;%\n  group_by(artist) %&gt;%\n  summarise(song = n()) %&gt;%\n  arrange(desc(song)) %&gt;%\n  head(50)\ndf_grouped\n\n# A tibble: 50 × 2\n   artist          song\n   &lt;chr&gt;          &lt;int&gt;\n 1 Drake             23\n 2 Rihanna           23\n 3 Eminem            21\n 4 Calvin Harris     20\n 5 Britney Spears    19\n 6 David Guetta      18\n 7 Beyoncé           16\n 8 Chris Brown       16\n 9 Kanye West        16\n10 Katy Perry        16\n# ℹ 40 more rows\n\ndf_grouped$artist &lt;- as.character(df_grouped$artist)\n\n# Create bar plot\nggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +\n  geom_bar(stat = \"identity\", width = 0.8, color = \"black\") +\n  labs(title = \"List of Songs Recorded by Each Singer\", x = \"Artist\", y = \"Total Songs\") +\n  geom_text(aes(label = song), vjust = -0.5, size = 3) +\n  theme_minimal() +\n  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +\n  guides(fill = FALSE)\n\nWarning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use \"none\" instead as\nof ggplot2 3.3.4."
+    "text": "4. songs per artist top 50 (bar chart)"
   },
   {
     "objectID": "datastory.html#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points",
     "href": "datastory.html#popularity-vs-songs-top-25-songs-line-graph---connecting-the-points",
     "title": "Data Story",
     "section": "5. popularity vs songs, top 25 songs (line graph - connecting the points)",
-    "text": "5. popularity vs songs, top 25 songs (line graph - connecting the points)\n\n\n# A tibble: 25 × 2\n   popularity song                \n        &lt;dbl&gt; &lt;chr&gt;               \n 1         89 Sweater Weather     \n 2         88 Another Love        \n 3         87 Without Me          \n 4         86 The Real Slim Shady \n 5         86 Wait a Minute!      \n 6         86 lovely (with Khalid)\n 7         85 'Till I Collapse    \n 8         85 Locked out of Heaven\n 9         85 Daddy Issues        \n10         85 The Nights          \n# ℹ 15 more rows"
+    "text": "5. popularity vs songs, top 25 songs (line graph - connecting the points)"
   },
   {
     "objectID": "datastory.html#songs-which-are-explicit-content-pie-chart",
     "href": "datastory.html#songs-which-are-explicit-content-pie-chart",
     "title": "Data Story",
     "section": "6. songs which are explicit content (pie chart)",
-    "text": "6. songs which are explicit content (pie chart)\n\n\n# A tibble: 2 × 2\n  explicit total_songs\n  &lt;lgl&gt;          &lt;int&gt;\n1 FALSE           1404\n2 TRUE             537\n\n\n# A tibble: 2 × 3\n  explicit total_songs percent\n  &lt;lgl&gt;          &lt;int&gt;   &lt;dbl&gt;\n1 FALSE           1404    72.3\n2 TRUE             537    27.7"
+    "text": "6. songs which are explicit content (pie chart)"
   }
 ]

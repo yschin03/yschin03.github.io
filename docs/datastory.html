@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -180,27 +146,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="total-number-of-songs-versus-genre-column-chart">1. Total number of songs versus genre (column chart)</h2>
 <p>Let us analyse the total number of songs for the top 30 genre types.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-Rows: 1941 Columns: 8
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): artist, song, genre
-dbl (4): year, popularity, speechiness, tempo
-lgl (1): explicit
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -209,22 +154,6 @@ lgl (1): explicit
 <section id="songs-per-year" class="level2">
 <h2 class="anchored" data-anchor-id="songs-per-year">3. Songs per year</h2>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 23 × 2
-    year  song
-   &lt;dbl&gt; &lt;int&gt;
- 1  2012   113
- 2  2017   110
- 3  2001   106
- 4  2018   104
- 5  2010   103
- 6  2005   101
- 7  2014   100
- 8  2016    98
- 9  2011    96
-10  2004    95
-# ℹ 13 more rows</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -233,43 +162,6 @@ lgl (1): explicit
 <section id="songs-per-artist-top-50-bar-chart" class="level2">
 <h2 class="anchored" data-anchor-id="songs-per-artist-top-50-bar-chart">4. songs per artist top 50 (bar chart)</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(artist) <span class="sc">%&gt;%</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">song =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(song)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">50</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df_grouped</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 50 × 2
-   artist          song
-   &lt;chr&gt;          &lt;int&gt;
- 1 Drake             23
- 2 Rihanna           23
- 3 Eminem            21
- 4 Calvin Harris     20
- 5 Britney Spears    19
- 6 David Guetta      18
- 7 Beyoncé           16
- 8 Chris Brown       16
- 9 Kanye West        16
-10 Katy Perry        16
-# ℹ 40 more rows</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_grouped<span class="sc">$</span>artist <span class="ot">&lt;-</span> <span class="fu">as.character</span>(df_grouped<span class="sc">$</span>artist)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create bar plot</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_grouped, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(artist, <span class="sc">-</span>song), <span class="at">y =</span> song, <span class="at">fill =</span> artist)) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">width =</span> <span class="fl">0.8</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"List of Songs Recorded by Each Singer"</span>, <span class="at">x =</span> <span class="st">"Artist"</span>, <span class="at">y =</span> <span class="st">"Total Songs"</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> song), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use "none" instead as
-of ggplot2 3.3.4.</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -278,22 +170,6 @@ of ggplot2 3.3.4.</code></pre>
 <section id="popularity-vs-songs-top-25-songs-line-graph---connecting-the-points" class="level2">
 <h2 class="anchored" data-anchor-id="popularity-vs-songs-top-25-songs-line-graph---connecting-the-points">5. popularity vs songs, top 25 songs (line graph - connecting the points)</h2>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 25 × 2
-   popularity song                
-        &lt;dbl&gt; &lt;chr&gt;               
- 1         89 Sweater Weather     
- 2         88 Another Love        
- 3         87 Without Me          
- 4         86 The Real Slim Shady 
- 5         86 Wait a Minute!      
- 6         86 lovely (with Khalid)
- 7         85 'Till I Collapse    
- 8         85 Locked out of Heaven
- 9         85 Daddy Issues        
-10         85 The Nights          
-# ℹ 15 more rows</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -302,20 +178,6 @@ of ggplot2 3.3.4.</code></pre>
 <section id="songs-which-are-explicit-content-pie-chart" class="level2">
 <h2 class="anchored" data-anchor-id="songs-which-are-explicit-content-pie-chart">6. songs which are explicit content (pie chart)</h2>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  explicit total_songs
-  &lt;lgl&gt;          &lt;int&gt;
-1 FALSE           1404
-2 TRUE             537</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  explicit total_songs percent
-  &lt;lgl&gt;          &lt;int&gt;   &lt;dbl&gt;
-1 FALSE           1404    72.3
-2 TRUE             537    27.7</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="datastory_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
