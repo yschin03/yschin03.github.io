@@ -88,7 +88,7 @@
     "href": "datastory.html",
     "title": "Data Story",
     "section": "",
-    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:\n\n#App1\n \nThe column “genre” lists the genres of each song, with one song having possibly more than one genre. This makes it hard for analysis when using the “genre” column."
+    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:\n\n \nThe column “genre” lists the genres of each song, with one song having possibly more than one genre. This makes it hard for analysis when using the “genre” column."
   },
   {
     "objectID": "datastory.html#quarto",
