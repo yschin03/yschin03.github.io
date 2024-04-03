@@ -150,8 +150,8 @@
     "objectID": "datastory.html#songs-per-artist---top-50-artists",
     "href": "datastory.html#songs-per-artist---top-50-artists",
     "title": "Data Story",
-    "section": "4. Songs Per Artist - Top 50 Artists",
-    "text": "4. Songs Per Artist - Top 50 Artists\nThe bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+    "section": "Songs Per Artist - Top 50 Artists",
+    "text": "Songs Per Artist - Top 50 Artists\nThe bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
   },
   {
     "objectID": "datastory.html#top-25-songs-based-on-popularity",

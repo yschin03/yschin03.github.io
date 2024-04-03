@@ -57,7 +57,7 @@ hover_text <- data.frame(year = songs_per_year$year,
 p
 ```
 
-## 4. Songs Per Artist - Top 50 Artists
+## Songs Per Artist - Top 50 Artists
 
 The bar chart below consolidates data on the number of songs released by the top 50 artists featured in the dataset of top Spotify tracks, arranged from highest number of songs to lowest.
 
@@ -70,7 +70,7 @@ df_grouped <- df %>%
   group_by(artist) %>%
   summarise(song = n()) %>%
   arrange(desc(song)) %>%
-  head(50)
+  head(30)
 
 df_grouped$artist <- as.character(df_grouped$artist)
 
@@ -81,7 +81,8 @@ ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
   geom_text(aes(label = song), vjust = -0.5, size = 3) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  guides(fill = FALSE)
+  guides(fill = FALSE) 
+  
 
 ```
 

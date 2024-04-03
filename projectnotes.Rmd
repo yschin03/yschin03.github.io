@@ -11,7 +11,7 @@ rsconnect::setAccountInfo(name='edwxgo-yin0shuen-chin',
 
 notes:
 first: clean data
-> remove duplicate values; remove NA values
+> remove duplicate values; remove NA values; remove irrelevant columns
 
 What determines the extent of popularity of songs in Spotify?
   
@@ -109,30 +109,59 @@ area_plot <- ggplot(df_grouped, aes(x = year, y = song, group = 1)) +
 area_plot
 
 ```  
-  
+## songs per year but bar chart 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+songs_per_year <- df %>% count(year) %>% arrange(year)
+
+
+
+hover_text <- data.frame(year = songs_per_year$year, n = songs_per_year$n)
+
+p <- ggplotly(ggplot(songs_per_year, aes(x = year, y = n)) +
+  geom_col(fill = 'mediumpurple') +
+  labs(title = 'Number of songs per year',
+       x = 'Year',
+       y = 'Number of songs') +
+  scale_x_continuous(breaks = songs_per_year$year) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)))
+
+hover_text <- data.frame(year = songs_per_year$year,
+                         n = songs_per_year$n,
+                         label = paste(songs_per_year$year, ":", songs_per_year$n, sep = " "))
+
+
+p
+```
+
+
+
 ## 4. songs per artist top 50 (bar chart)  
-```{r setup, include=FALSE}
+```{r, echo=FALSE, message = FALSE, error = FALSE, warning = FALSE}
 
 # Group by 'artist' and count the number of songs, then sort by 'song' count in descending order and select top 50
 df_grouped <- df %>%
   group_by(artist) %>%
   summarise(song = n()) %>%
-  arrange(desc(song)) %>%
-  head(50)
-df_grouped
+  arrange(desc(song)) 
 
 df_grouped$artist <- as.character(df_grouped$artist)
 
 # Create bar plot
 ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
   geom_bar(stat = "identity", width = 0.8, color = "black") +
-  labs(title = "List of Songs Recorded by Each Singer", x = "Artist", y = "Total Songs") +
+  labs(title = "List of Songs Recorded by Each Artist", x = "Artist", y = "Total Songs") +
   geom_text(aes(label = song), vjust = -0.5, size = 3) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   guides(fill = FALSE)
 
-```  
+```
   
 ## 5. popularity vs songs, top 25 songs (line graph - connecting the points)  
 ```{r, echo=FALSE}
