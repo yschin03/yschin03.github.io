@@ -108,8 +108,8 @@
     "objectID": "datastory.html#songs-per-year",
     "href": "datastory.html#songs-per-year",
     "title": "Data Story",
-    "section": "3. Songs Per Year",
-    "text": "3. Songs Per Year\nThe area plot below consolidates the number of songs per year between 1998 and 2020."
+    "section": "Songs Per Year",
+    "text": "Songs Per Year\nThe bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values."
   },
   {
     "objectID": "datastory.html#songs-per-artist-top-50-bar-chart",
