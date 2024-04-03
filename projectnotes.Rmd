@@ -1,5 +1,12 @@
+##COMMENTS
+can use slider for 4. Songs Per Artist - Top 50 Artists so users can choose the number of artists they wanna choose 
+- similar for no. 1 
+
 install.packages('rsconnect')
-rsconnect::setAccountInfo(name='edwxgo-yin0shuen-chin', token='1E2DB8D66D68057A6A967920CD1031EC', secret='KqDM4lbsuF9akAcI4+djkTS3eGtZ7sThD0yyspQW')
+
+rsconnect::setAccountInfo(name='edwxgo-yin0shuen-chin',
+			  token='1E2DB8D66D68057A6A967920CD1031EC',
+			  secret='KqDM4lbsuF9akAcI4+djkTS3eGtZ7sThD0yyspQW')
 
 
 notes:
@@ -220,8 +227,19 @@ print(plot)
 
 ```  
   
-## 8. popularity versus explicit content (box plot)  
-```{r setup, include=FALSE}
+## 8. Popularity versus explicit songs
+
+```{r}
+
+
+ggplot(df, aes(x = explicit, y = popularity, fill = explicit)) +
+  geom_boxplot() +
+  labs(title = "Popularity versus explicit songs",
+       x = "Explicit content",
+       y = "Popularity") +
+  scale_fill_manual(values = c("steelblue", "darkred")) +
+  theme_minimal() +
+  theme(legend.position = "none")
 
 ```  
   

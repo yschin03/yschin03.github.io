@@ -2,11 +2,21 @@
 title: "Data Story"
 ---
 
-## Placeholder shiny app - to be customised
+# Data Cleaning
+
+I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis. 
+
+You can view both original and cleaned datasets here:
 
 ```{=html}
-<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/Shiny_visualisation_NM2207/"> </iframe>
+
+#App1
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
 ```
+
+
+The column "genre" lists the genres of each song, with one song having possibly more than one genre. This makes it hard for analysis when using the "genre" column.
+
 # Data Visualisation
 
 Below, I will be analysing various song properties and their relationships with song popularity.
