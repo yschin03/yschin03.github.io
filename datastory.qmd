@@ -12,7 +12,7 @@ You can view both original and cleaned datasets here:
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
 ```
-The column "genre" lists the genres of each song, with one song having possibly more than one genre. This makes it hard for analysis when using the "genre" column.
+
 
 # Data Visualisation
 
@@ -86,13 +86,13 @@ ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
 
 ```
 
-## 5. Top 25 Songs Based On Popularity
+## Top 20 Songs Based On Popularity
 
-Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
+Line graph features the top 20 songs from the dataset, arranged in descending order based on popularity level. Hover over each point to its individual popularity level out of 100.
 
 *The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.*
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning = FALSE}
 library(ggplot2)
 library(dplyr)
 
@@ -101,20 +101,28 @@ library(dplyr)
 df_top <- df %>%
   arrange(desc(popularity)) %>%
   select(popularity, song) %>%
-   head(25) 
+   head(20) 
 
 
 
 
 # Create line plot
-ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
-  geom_line() +
-  geom_point() +
-  labs(title = "Top 25 songs", x = "Song", y = "Popularity") +
-  scale_color_manual(values = "green") +
+p <- ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
+  geom_line(colour = "blue") +
+  geom_point(colour = "blue") +
+  labs(title = "Top 20 Spotify Songs in Track List", x = "Song", y = "Popularity") +
+  scale_color_manual(values = "blue") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   guides(fill = FALSE)
+
+p <- p + transition_states(states = song, transition_length = 2)
+
+ggplotly(p, tooltip = c("song", "popularity")) %>%
+  style(xaxis = list(title = "Song"),
+        yaxis = list(title = "Popularity"),
+        title = "Top 20 songs")
+
 
 ```
 
@@ -122,7 +130,7 @@ ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
 
 This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
 
-*72.4% , or the majority of the songs in this dataset, are explicit.*
+*27.6% , or the minority of the songs in this dataset, are explicit.*
 
 ```{r, echo=FALSE}
 

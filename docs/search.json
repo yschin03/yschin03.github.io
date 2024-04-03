@@ -88,7 +88,7 @@
     "href": "datastory.html",
     "title": "Data Story",
     "section": "",
-    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:\n\n \nThe column “genre” lists the genres of each song, with one song having possibly more than one genre. This makes it hard for analysis when using the “genre” column."
+    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:"
   },
   {
     "objectID": "datastory.html#quarto",
@@ -165,7 +165,7 @@
     "href": "datastory.html#songs-containing-explicit-content",
     "title": "Data Story",
     "section": "6. Songs Containing Explicit Content",
-    "text": "6. Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n72.4% , or the majority of the songs in this dataset, are explicit."
+    "text": "6. Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n27.6% , or the minority of the songs in this dataset, are explicit."
   },
   {
     "objectID": "datastory.html#year-vs-explicit-content",
@@ -180,5 +180,12 @@
     "title": "Data Story",
     "section": "8. Popularity versus Explicit Songs",
     "text": "8. Popularity versus Explicit Songs\nThe bar plot below visualises the popularity of songs based on whether they are explicit or not.\nTo put in analysis"
+  },
+  {
+    "objectID": "datastory.html#top-20-songs-based-on-popularity",
+    "href": "datastory.html#top-20-songs-based-on-popularity",
+    "title": "Data Story",
+    "section": "Top 20 Songs Based On Popularity",
+    "text": "Top 20 Songs Based On Popularity\nLine graph features the top 20 songs from the dataset, arranged in descending order based on popularity level. Hover over each point to its individual popularity level out of 100.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
   }
 ]
