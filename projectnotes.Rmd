@@ -140,7 +140,7 @@ p
 ```
 
 
-
+## 4. songs per artist top 50 (bar chart)  - shiny app App2
 ## 4. songs per artist top 50 (bar chart)  
 ```{r, echo=FALSE, message = FALSE, error = FALSE, warning = FALSE}
 
@@ -148,18 +148,20 @@ p
 df_grouped <- df %>%
   group_by(artist) %>%
   summarise(song = n()) %>%
-  arrange(desc(song)) 
+  arrange(desc(song)) %>%
+  head(30)
 
 df_grouped$artist <- as.character(df_grouped$artist)
 
 # Create bar plot
 ggplot(df_grouped, aes(x = reorder(artist, -song), y = song, fill = artist)) +
   geom_bar(stat = "identity", width = 0.8, color = "black") +
-  labs(title = "List of Songs Recorded by Each Artist", x = "Artist", y = "Total Songs") +
+  labs(title = "Top 30 Artists with Most Spotify Top Tracks", x = "Artist", y = "Total Songs") +
   geom_text(aes(label = song), vjust = -0.5, size = 3) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  guides(fill = FALSE)
+  guides(fill = FALSE) 
+  
 
 ```
   

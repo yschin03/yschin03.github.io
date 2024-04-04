@@ -81,7 +81,7 @@
     "href": "myprojects.html#overview",
     "title": "My Project",
     "section": "Overview",
-    "text": "Overview\nHere is an overview of the dataset.\nRows: 2,000\nColumns: 18\n$ artist           &lt;chr&gt; \"Britney Spears\", \"blink-182\", \"Faith Hill\", \"Bon Jovi\", \"*NSYNC\", \"Sisqo\", \"Eminem\", \"Robbie Willia…\n$ song             &lt;chr&gt; \"Oops!...I Did It Again\", \"All The Small Things\", \"Breathe\", \"It's My Life\", \"Bye Bye Bye\", \"Thong S…\n$ duration_ms      &lt;dbl&gt; 211160, 167066, 250546, 224493, 200560, 253733, 284200, 258560, 271333, 307153, 238759, 268863, 3063…\n$ explicit         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…\n$ year             &lt;dbl&gt; 2000, 1999, 1999, 2000, 2000, 1999, 2000, 2000, 1999, 2001, 2011, 1999, 2000, 1999, 1999, 2002, 1999…\n$ popularity       &lt;dbl&gt; 77, 79, 66, 78, 65, 69, 86, 68, 75, 77, 1, 56, 55, 62, 61, 53, 64, 73, 64, 82, 83, 65, 62, 54, 54, 7…\n$ danceability     &lt;dbl&gt; 0.751, 0.434, 0.529, 0.551, 0.614, 0.706, 0.949, 0.708, 0.713, 0.720, 0.617, 0.745, 0.822, 0.586, 0.…\n$ energy           &lt;dbl&gt; 0.834, 0.897, 0.496, 0.913, 0.928, 0.888, 0.661, 0.772, 0.678, 0.808, 0.728, 0.958, 0.922, 0.659, 0.…\n$ key              &lt;dbl&gt; 1, 0, 7, 0, 8, 2, 5, 7, 5, 6, 7, 7, 11, 0, 3, 6, 10, 8, 6, 10, 3, 8, 5, 11, 1, 11, 11, 10, 9, 10, 11…\n$ loudness         &lt;dbl&gt; -5.444, -4.918, -9.007, -4.063, -4.806, -6.959, -4.244, -4.264, -3.525, -5.627, -7.932, -9.664, -5.7…\n$ mode             &lt;dbl&gt; 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0…\n$ speechiness      &lt;dbl&gt; 0.0437, 0.0488, 0.0290, 0.0466, 0.0516, 0.0654, 0.0572, 0.0322, 0.1020, 0.0379, 0.0292, 0.0287, 0.09…\n$ acousticness     &lt;dbl&gt; 0.30000, 0.01030, 0.17300, 0.02630, 0.04080, 0.11900, 0.03020, 0.02670, 0.27300, 0.00793, 0.03280, 0…\n$ instrumentalness &lt;dbl&gt; 1.77e-05, 0.00e+00, 0.00e+00, 1.35e-05, 1.04e-03, 9.64e-05, 0.00e+00, 0.00e+00, 0.00e+00, 2.93e-02, …\n$ liveness         &lt;dbl&gt; 0.3550, 0.6120, 0.2510, 0.3470, 0.0845, 0.0700, 0.0454, 0.4670, 0.1490, 0.0634, 0.3600, 0.5330, 0.25…\n$ valence          &lt;dbl&gt; 0.8940, 0.6840, 0.2780, 0.5440, 0.8790, 0.7140, 0.7600, 0.8610, 0.7340, 0.8690, 0.8080, 0.9600, 0.56…\n$ tempo            &lt;dbl&gt; 95.053, 148.726, 136.859, 119.992, 172.656, 121.549, 104.504, 103.035, 138.009, 126.041, 139.066, 12…\n$ genre            &lt;chr&gt; \"pop\", \"rock, pop\", \"pop, country\", \"rock, metal\", \"pop\", \"hip hop, pop, R&B\", \"hip hop\", \"pop, rock…"
+    "text": "Overview\nHere is an overview of the dataset.\n\n\nRows: 2,000\nColumns: 18\n$ artist           &lt;chr&gt; \"Britney Spears\", \"blink-182\", \"Faith Hill\", \"Bon Jov…\n$ song             &lt;chr&gt; \"Oops!...I Did It Again\", \"All The Small Things\", \"Br…\n$ duration_ms      &lt;dbl&gt; 211160, 167066, 250546, 224493, 200560, 253733, 28420…\n$ explicit         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, FALSE,…\n$ year             &lt;dbl&gt; 2000, 1999, 1999, 2000, 2000, 1999, 2000, 2000, 1999,…\n$ popularity       &lt;dbl&gt; 77, 79, 66, 78, 65, 69, 86, 68, 75, 77, 1, 56, 55, 62…\n$ danceability     &lt;dbl&gt; 0.751, 0.434, 0.529, 0.551, 0.614, 0.706, 0.949, 0.70…\n$ energy           &lt;dbl&gt; 0.834, 0.897, 0.496, 0.913, 0.928, 0.888, 0.661, 0.77…\n$ key              &lt;dbl&gt; 1, 0, 7, 0, 8, 2, 5, 7, 5, 6, 7, 7, 11, 0, 3, 6, 10, …\n$ loudness         &lt;dbl&gt; -5.444, -4.918, -9.007, -4.063, -4.806, -6.959, -4.24…\n$ mode             &lt;dbl&gt; 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0,…\n$ speechiness      &lt;dbl&gt; 0.0437, 0.0488, 0.0290, 0.0466, 0.0516, 0.0654, 0.057…\n$ acousticness     &lt;dbl&gt; 0.30000, 0.01030, 0.17300, 0.02630, 0.04080, 0.11900,…\n$ instrumentalness &lt;dbl&gt; 1.77e-05, 0.00e+00, 0.00e+00, 1.35e-05, 1.04e-03, 9.6…\n$ liveness         &lt;dbl&gt; 0.3550, 0.6120, 0.2510, 0.3470, 0.0845, 0.0700, 0.045…\n$ valence          &lt;dbl&gt; 0.8940, 0.6840, 0.2780, 0.5440, 0.8790, 0.7140, 0.760…\n$ tempo            &lt;dbl&gt; 95.053, 148.726, 136.859, 119.992, 172.656, 121.549, …\n$ genre            &lt;chr&gt; \"pop\", \"rock, pop\", \"pop, country\", \"rock, metal\", \"p…\n\n\nRows: 2,000 Columns: 18 $ artist  “Britney Spears”, “blink-182”, “Faith Hill”, “Bon Jovi”, “*NSYNC”, “Sisqo”, “Eminem”, “Robbie Williams”, “D… $ song ”Oops!…I Did It Again”, “All The Small Things”, “Breathe”, “It’s My Life”, “Bye Bye Bye”, “Thong Song”, “… $ duration_ms  211160, 167066, 250546, 224493, 200560, 253733, 284200, 258560, 271333, 307153, 238759, 268863, 306333, 285… $ explicit  FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS… $ year  2000, 1999, 1999, 2000, 2000, 1999, 2000, 2000, 1999, 2001, 2011, 1999, 2000, 1999, 1999, 2002, 1999, 2000,… $ popularity  77, 79, 66, 78, 65, 69, 86, 68, 75, 77, 1, 56, 55, 62, 61, 53, 64, 73, 64, 82, 83, 65, 62, 54, 54, 72, 69, … $ danceability  0.751, 0.434, 0.529, 0.551, 0.614, 0.706, 0.949, 0.708, 0.713, 0.720, 0.617, 0.745, 0.822, 0.586, 0.689, 0.… $ energy  0.834, 0.897, 0.496, 0.913, 0.928, 0.888, 0.661, 0.772, 0.678, 0.808, 0.728, 0.958, 0.922, 0.659, 0.685, 0.… $ key  1, 0, 7, 0, 8, 2, 5, 7, 5, 6, 7, 7, 11, 0, 3, 6, 10, 8, 6, 10, 3, 8, 5, 11, 1, 11, 11, 10, 9, 10, 11, 7, 7,… $ loudness  -5.444, -4.918, -9.007, -4.063, -4.806, -6.959, -4.244, -4.264, -3.525, -5.627, -7.932, -9.664, -5.798, -7.… $ mode  0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0,… $ speechiness  0.0437, 0.0488, 0.0290, 0.0466, 0.0516, 0.0654, 0.0572, 0.0322, 0.1020, 0.0379, 0.0292, 0.0287, 0.0989, 0.0… $ acousticness  0.30000, 0.01030, 0.17300, 0.02630, 0.04080, 0.11900, 0.03020, 0.02670, 0.27300, 0.00793, 0.03280, 0.08130,… $ instrumentalness  1.77e-05, 0.00e+00, 0.00e+00, 1.35e-05, 1.04e-03, 9.64e-05, 0.00e+00, 0.00e+00, 0.00e+00, 2.93e-02, 4.82e-0… $ liveness  0.3550, 0.6120, 0.2510, 0.3470, 0.0845, 0.0700, 0.0454, 0.4670, 0.1490, 0.0634, 0.3600, 0.5330, 0.2520, 0.1… $ valence  0.8940, 0.6840, 0.2780, 0.5440, 0.8790, 0.7140, 0.7600, 0.8610, 0.7340, 0.8690, 0.8080, 0.9600, 0.5680, 0.1… $ tempo  95.053, 148.726, 136.859, 119.992, 172.656, 121.549, 104.504, 103.035, 138.009, 126.041, 139.066, 129.962, … $ genre ”pop”, “rock, pop”, “pop, country”, “rock, metal”, “pop”, “hip hop, pop, R&B”, “hip hop”, “pop, rock”, “pop…"
   },
   {
     "objectID": "datastory.html",
@@ -108,8 +108,8 @@
     "objectID": "datastory.html#songs-per-year",
     "href": "datastory.html#songs-per-year",
     "title": "Data Story",
-    "section": "Songs Per Year",
-    "text": "Songs Per Year\nThe bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values."
+    "section": "1.1 Songs Per Year",
+    "text": "1.1 Songs Per Year\nThe bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values."
   },
   {
     "objectID": "datastory.html#songs-per-artist-top-50-bar-chart",
@@ -157,15 +157,15 @@
     "objectID": "datastory.html#top-25-songs-based-on-popularity",
     "href": "datastory.html#top-25-songs-based-on-popularity",
     "title": "Data Story",
-    "section": "5. Top 25 Songs Based On Popularity",
-    "text": "5. Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
+    "section": "1.3 Top 25 Songs Based On Popularity",
+    "text": "1.3 Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nHover over each point to its individual popularity level out of 100.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
   },
   {
     "objectID": "datastory.html#songs-containing-explicit-content",
     "href": "datastory.html#songs-containing-explicit-content",
     "title": "Data Story",
-    "section": "6. Songs Containing Explicit Content",
-    "text": "6. Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n27.6% , or the minority of the songs in this dataset, are explicit."
+    "section": "2.1 Songs Containing Explicit Content",
+    "text": "2.1 Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n27.6% , or the minority of the songs in this dataset, are explicit."
   },
   {
     "objectID": "datastory.html#year-vs-explicit-content",
@@ -178,8 +178,8 @@
     "objectID": "datastory.html#popularity-versus-explicit-songs",
     "href": "datastory.html#popularity-versus-explicit-songs",
     "title": "Data Story",
-    "section": "8. Popularity versus Explicit Songs",
-    "text": "8. Popularity versus Explicit Songs\nThe bar plot below visualises the popularity of songs based on whether they are explicit or not.\nTo put in analysis"
+    "section": "2.3 Popularity versus Explicit Songs",
+    "text": "2.3 Popularity versus Explicit Songs\nThe box plots below visualises the popularity of songs based on whether they are explicit or not.\nHover over each plot to see its individual values."
   },
   {
     "objectID": "datastory.html#top-20-songs-based-on-popularity",
@@ -187,5 +187,40 @@
     "title": "Data Story",
     "section": "Top 20 Songs Based On Popularity",
     "text": "Top 20 Songs Based On Popularity\nLine graph features the top 20 songs from the dataset, arranged in descending order based on popularity level. Hover over each point to its individual popularity level out of 100.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
+  },
+  {
+    "objectID": "myprojects.html#main-problem-statement",
+    "href": "myprojects.html#main-problem-statement",
+    "title": "My Project",
+    "section": "Main Problem Statement",
+    "text": "Main Problem Statement\nIn my data story, I will be analysing various song properties and their relationships with song popularity.\nThe main question I wish to answer is “What determines the extent of popularity of songs in Spotify?”"
+  },
+  {
+    "objectID": "datastory.html#songs-per-artist---top-30-artists",
+    "href": "datastory.html#songs-per-artist---top-30-artists",
+    "title": "Data Story",
+    "section": "1.2 Songs Per Artist - Top 30 Artists",
+    "text": "1.2 Songs Per Artist - Top 30 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+  },
+  {
+    "objectID": "datastory.html#songs-overall-statistics",
+    "href": "datastory.html#songs-overall-statistics",
+    "title": "Data Story",
+    "section": "1.0 Songs Overall Statistics",
+    "text": "1.0 Songs Overall Statistics"
+  },
+  {
+    "objectID": "datastory.html#explicit-songs-overview",
+    "href": "datastory.html#explicit-songs-overview",
+    "title": "Data Story",
+    "section": "2.0 Explicit Songs Overview",
+    "text": "2.0 Explicit Songs Overview"
+  },
+  {
+    "objectID": "datastory.html#year-versus-explicit-content",
+    "href": "datastory.html#year-versus-explicit-content",
+    "title": "Data Story",
+    "section": "2.2 Year versus Explicit Content",
+    "text": "2.2 Year versus Explicit Content\nThe area plot below illustrates the relationship between the year of song published and explicit songs.\nHover over each point to see its individual values."
   }
 ]

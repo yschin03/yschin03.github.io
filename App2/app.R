@@ -1,63 +1,46 @@
-library(shiny)
+# Load the tidyverse library
 library(tidyverse)
 
-df <- read_csv("df.csv")
-
-# Define UI for dataset viewer app ----
+# Define the UI
 ui <- fluidPage(
-  
-  # App title ----
-  titlePanel("Viewing the Datasets "),
-  
-  # Sidebar layout with a input and output definitions ----
+  titlePanel("Top Artists with Most Spotify Top Tracks"),
   sidebarLayout(
-    
-    # Sidebar panel for inputs ----
     sidebarPanel(
-      
-      # Input: Selector for choosing variable for x-axis ----
-      selectInput(inputId = "x_var",
-                  label = "Choose a variable for x-axis:",
-                  choices = colnames(df)),
-      
-      # Input: Selector for choosing variable for y-axis ----
-      selectInput(inputId = "y_var",
-                  label = "Choose a variable for y-axis:",
-                  choices = colnames(df)),
-      
-      # Input: Numeric entry for number of obs to view ----
-      numericInput(inputId = "obs",
-                   label = "Number of observations to view:",
-                   value = 20)
+      sliderInput("n_values", "Number of Values:", min = 1, max = 100, value = 20)
     ),
-    
-    # Main panel for displaying outputs ----
     mainPanel(
-      
-      # Output: Column chart with requested number of observations ----
-      plotOutput("column_chart")
-      
+      plotOutput("bar_plot")
     )
   )
-  
 )
 
-# Define server logic to summarize and view selected dataset ----
+# Define the server function
 server <- function(input, output) {
+  # Load the data
+  df <- read_csv("songs_normalize.csv")
   
-  datasetInput <- reactive({
-    df
+  # Create the bar plot
+  df_grouped <- reactive({
+    df_grouped <- df %>%
+      group_by(artist) %>%
+      summarise(song = n()) %>%
+      arrange(desc(song)) %>%
+      head(input$n_values)
+    
+    df_grouped$artist <- as.character(df_grouped$artist)
+    df_grouped
   })
   
-  # Create a column chart of the selected variables
-  output$column_chart <- renderPlot({
-    ggplot(datasetInput(), aes_string(x = input$x_var, y = input$y_var)) +
-      geom_col() +
-      labs(x = input$x_var, y = input$y_var, title = "Column Chart of Selected Variables")
+  output$bar_plot <- renderPlot({
+    ggplot(df_grouped(), aes(x = reorder(artist, -song), y = song, fill = "red")) +
+      geom_bar(stat = "identity", width = 0.8, color = "black") +
+      labs(title = "Top Artists with Most Spotify Top Tracks", x = "Artist", y = "Total Songs") +
+      geom_text(aes(label = song), vjust = -0.5, size = 3) +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+      guides(fill = FALSE)
   })
-  
-  
 }
 
-# Create Shiny app ----
-shinyApp(ui = ui, server = server)
+# Run the Shiny app
+shinyApp(ui, server)
