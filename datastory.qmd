@@ -12,6 +12,24 @@ You can view both original and cleaned datasets here:
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
 ```
+
+## Names and Meanings of Variables in Dataset
+
+"artist" refers to the name of the Artist.
+
+"song" refers to the name of the song track.
+
+"explicit" refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.
+
+"year" refers to the release year of the track.
+
+"popularity" refers to the popularity level of the track. The higher the value the more popular the song is.
+
+"speechiness" refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+
+"tempo" refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+
+
 # Data Visualisation
 
 Below, I will be analysing various song properties and their relationships with song popularity.
