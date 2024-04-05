@@ -1,12 +1,12 @@
-name: App1
-title: App1
+name: App3
+title: App3
 username: edwxgo-yin0shuen-chin
 account: edwxgo-yin0shuen-chin
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
-appId: 11652798
-bundleId: 8457666
-url: https://edwxgo-yin0shuen-chin.shinyapps.io/App1/
+appId: 11677028
+bundleId: 8458305
+url: https://edwxgo-yin0shuen-chin.shinyapps.io/App3/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE

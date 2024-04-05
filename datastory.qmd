@@ -12,7 +12,6 @@ You can view both original and cleaned datasets here:
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
 ```
-
 ## Names and Meanings of Variables in Dataset
 
 "artist" refers to the name of the Artist.
@@ -29,6 +28,11 @@ You can view both original and cleaned datasets here:
 
 "tempo" refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
 
+"loudness" refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+
+"acousticness" refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
+
+"valence" refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0. 
 
 # Data Visualisation
 
@@ -38,11 +42,37 @@ The main question I wish to answer is **"What determines the extent of popularit
 
 ------------------------------------------------------------------------
 
-## [1.0 Songs Overall Statistics]{.underline}
+## 1.0 Overview Statistics
 
-## 1.1 Songs Per Year
+Here is a breakdown of the general statistics for the cleaned dataset.
+
+## 1.1 Number of songs and artists
+
+Number of artists:
+
+```{r, message = FALSE, echo = FALSE}
+library(tidyverse)
+df <- read_csv("df.csv")
+artists <- df$artist %>%
+  unique() %>%
+  length() 
+artists
+
+
+```
+
+Number of songs:
+
+```{r, echo = FALSE}
+nrow(df)
+
+```
+
+## 1.2 Songs Per Year
 
 The bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values.
+
+*2012 has the highest number of songs, at 113 songs.*
 
 ```{r, echo=FALSE, message = FALSE}
 library(dplyr)
@@ -75,7 +105,7 @@ hover_text <- data.frame(year = songs_per_year$year,
 p
 ```
 
-## 1.2 Songs Per Artist - Top 30 Artists
+## 1.3 Songs Per Artist - Top 100 Artists
 
 The interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.
 
@@ -87,7 +117,7 @@ Adjust the slider to select your preferred number of artists to show in the char
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App2/"> </iframe>
 ```
-## 1.3 Top 25 Songs Based On Popularity
+## 1.4 Top 25 Songs Based On Popularity
 
 Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
 
@@ -131,16 +161,17 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
 
 ```
 
-## [2.0 Explicit Songs Overview]{.underline}
+## [2.0 How does the explicit value of a song affect its popularity?]{.underline}
 
 ## 2.1 Songs Containing Explicit Content
 
 This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
 
-*27.6% , or the minority of the songs in this dataset, are explicit.*
+*27.7% , or the minority of the songs in this dataset, are explicit.*
 
-```{r, echo=FALSE}
-
+```{r, message = FALSE, echo=FALSE}
+library(tidyverse)
+df<- read_csv("df.csv")
 # Group the data by 'explicit'
 df_grouped <- df %>%
   group_by(explicit) %>%
@@ -164,7 +195,7 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
   coord_polar("y", start = 0) +
   scale_fill_manual(values = c("blue", "red")) +
   geom_text(aes(label = paste0(round(percent, 1), "%")),
-            position = position_stack(vjust = 0.5)) +
+            position = position_stack(vjust = 0.5), color ="white") +
   labs(title = "Songs containing explicit content",
        x = NULL,
        y = NULL,
@@ -184,6 +215,8 @@ print(pie_chart)
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
 Hover over each point to see its individual values.
+
+*2018 has the most number of explicit songs, at 49 songs.*
 
 ```{r, echo = FALSE, message = FALSE}
 library(ggplot2)
@@ -217,6 +250,8 @@ plot
 The box plots below visualises the popularity of songs based on whether they are explicit or not.
 
 Hover over each plot to see its individual values.
+
+_The median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs._
 
 ```{r, echo=FALSE}
 
@@ -253,3 +288,17 @@ plot
 
 
 ```
+
+## 3.0 How does different song attributes affect popularity?
+
+Firstly, let's take a look at the distribution of different song attributes.
+
+## 3.1 Distribution of Different Song Attributes
+
+
+```{=html}
+
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App3/"> </iframe>
+```
+
+

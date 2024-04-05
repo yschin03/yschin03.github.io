@@ -2,6 +2,7 @@
 can use slider for 4. Songs Per Artist - Top 50 Artists so users can choose the number of artists they wanna choose 
 - similar for no. 1 
 
+
 install.packages('rsconnect')
 
 rsconnect::setAccountInfo(name='edwxgo-yin0shuen-chin',
@@ -194,13 +195,14 @@ ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
   
 ## 6. songs which are explicit content (pie chart)  
 ```{r setup, include=FALSE}
-
+library(tidyverse)
+df<- read_csv("df.csv")
 # Group the data by 'explicit'
 df_grouped <- df %>%
   group_by(explicit) %>%
   summarise(total_songs =n())
 
-df_grouped
+
 
 # Calculate the percentage of each variable
 df_grouped <- df_grouped %>%
@@ -210,7 +212,7 @@ df_grouped <- df_grouped %>%
 df_sorted <- df_grouped %>%
   arrange(desc(total_songs))
 
-df_sorted
+
 
 # Create a pie chart
 pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
@@ -218,8 +220,8 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
   coord_polar("y", start = 0) +
   scale_fill_manual(values = c("blue", "red")) +
   geom_text(aes(label = paste0(round(percent, 1), "%")),
-            position = position_stack(vjust = 0.5)) +
-  labs(title = "Songs having explicit content",
+            position = position_stack(vjust = 0.5), color ="white") +
+  labs(title = "Songs containing explicit content",
        x = NULL,
        y = NULL,
        fill = NULL,
@@ -430,3 +432,90 @@ server <- function(input, output) {
 
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
+
+
+
+
+
+
+## 3.2 Distribution of Song Tempo
+
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+library(ggplot2)
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+p <- ggplot(df, aes(x=tempo)) +
+  geom_histogram(binwidth=3, fill="skyblue", color="black") +
+  labs(x="Tempo", y="Count", title="Distribution of Song Tempo")
+
+p <- p + transition_states(states = tempo,
+                           transition_length = 2,
+                           state_length = 1)
+
+ggplotly(p)
+```
+
+
+## 3.3 Distribution of Song Loudness
+```{r, message = FALSE, echo = FALSE}
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+p <- ggplot(df, aes(x=loudness)) +
+  geom_histogram(binwidth=0.7, fill="#BA110C", color="black") +
+  labs(x="Loudness", y="Count", title="Distribution of Song Loudness")
+
+p <- p + transition_states(states = loudness,
+                           transition_length = 2,
+                           state_length = 1)
+
+ggplotly(p)
+```
+
+## 3.4 Distribution of Song Acousticness
+```{r, message = FALSE, echo = FALSE}
+library(ggplot2)
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+p <- ggplot(df, aes(x=acousticness)) +
+  geom_histogram(binwidth=0.03, fill="darkgreen", color="black") +
+  labs(x="acousticness", y="Count", title="Distribution of Song Acousticness")
+
+p <- p + transition_states(states = acousticness,
+                           transition_length = 2,
+                           state_length = 1)
+
+ggplotly(p)
+```
+
+## 3.5 Distribution of Song Valence
+```{r, message = FALSE, echo = FALSE}
+library(ggplot2)
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+p <- ggplot(df, aes(x=valence)) +
+  geom_histogram(binwidth=0.025, fill= "mediumpurple" , color="black") +
+  labs(x="valence", y="Count", title="Distribution of Song Valence")
+
+p <- p + transition_states(states = valence,
+                           transition_length = 2,
+                           state_length = 1)
+
+ggplotly(p)
+```

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "About Me",
     "section": "",
-    "text": "Hi! I am Yin Shuen, a Year 2 Communications and New Media student. In my spare time, I enjoy watching movies, checking out new food places and listening to songs on Spotify.\nThe wide variety of song genres and artists available on streaming platform Spotify provides me with many options when it comes to song choices. This makes me interested in diving deeper in data insights regarding the song offerings in Spotify.\n\n\n\nOne of my favourite cafes!"
+    "text": "Hello and welcome to my webpage! I am Yin Shuen, a Year 2 Communications and New Media student. In my spare time, I enjoy watching movies, checking out new food places and listening to songs on Spotify.\nThe wide variety of song genres and artists available on streaming platform Spotify provides me with many options when it comes to song choices. This makes me interested in diving deeper in data insights regarding the song offerings in Spotify.\n\n\n\nOne of my favourite cafes!"
   },
   {
     "objectID": "about.html",
@@ -88,7 +88,7 @@
     "href": "datastory.html",
     "title": "Data Story",
     "section": "",
-    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:\n\n \n\n\n“artist” refers to the name of the Artist.\n“song” refers to the name of the song track.\n“explicit” refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.\n“year” refers to the release year of the track.\n“popularity” refers to the popularity level of the track. The higher the value the more popular the song is.\n“speechiness” refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.\n“tempo” refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration."
+    "text": "I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.\nYou can view both original and cleaned datasets here:\n\n \n\n\n“artist” refers to the name of the Artist.\n“song” refers to the name of the song track.\n“explicit” refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.\n“year” refers to the release year of the track.\n“popularity” refers to the popularity level of the track. The higher the value the more popular the song is.\n“speechiness” refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.\n“tempo” refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.\n“loudness” refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.\n“acousticness” refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.\n“valence” refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0."
   },
   {
     "objectID": "datastory.html#quarto",
@@ -108,8 +108,8 @@
     "objectID": "datastory.html#songs-per-year",
     "href": "datastory.html#songs-per-year",
     "title": "Data Story",
-    "section": "1.1 Songs Per Year",
-    "text": "1.1 Songs Per Year\nThe bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values."
+    "section": "1.2 Songs Per Year",
+    "text": "1.2 Songs Per Year\nThe bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values.\n2012 has the highest number of songs, at 113 songs."
   },
   {
     "objectID": "datastory.html#songs-per-artist-top-50-bar-chart",
@@ -157,15 +157,15 @@
     "objectID": "datastory.html#top-25-songs-based-on-popularity",
     "href": "datastory.html#top-25-songs-based-on-popularity",
     "title": "Data Story",
-    "section": "1.3 Top 25 Songs Based On Popularity",
-    "text": "1.3 Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nHover over each point to its individual popularity level out of 100.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
+    "section": "1.4 Top 25 Songs Based On Popularity",
+    "text": "1.4 Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nHover over each point to its individual popularity level out of 100.\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
   },
   {
     "objectID": "datastory.html#songs-containing-explicit-content",
     "href": "datastory.html#songs-containing-explicit-content",
     "title": "Data Story",
     "section": "2.1 Songs Containing Explicit Content",
-    "text": "2.1 Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n27.6% , or the minority of the songs in this dataset, are explicit."
+    "text": "2.1 Songs Containing Explicit Content\nThis simple pie chart below clearly illustrates the percentage of songs which contain explicit content.\n27.7% , or the minority of the songs in this dataset, are explicit."
   },
   {
     "objectID": "datastory.html#year-vs-explicit-content",
@@ -179,7 +179,7 @@
     "href": "datastory.html#popularity-versus-explicit-songs",
     "title": "Data Story",
     "section": "2.3 Popularity versus Explicit Songs",
-    "text": "2.3 Popularity versus Explicit Songs\nThe box plots below visualises the popularity of songs based on whether they are explicit or not.\nHover over each plot to see its individual values."
+    "text": "2.3 Popularity versus Explicit Songs\nThe box plots below visualises the popularity of songs based on whether they are explicit or not.\nHover over each plot to see its individual values.\nThe median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs."
   },
   {
     "objectID": "datastory.html#top-20-songs-based-on-popularity",
@@ -199,8 +199,8 @@
     "objectID": "datastory.html#songs-per-artist---top-30-artists",
     "href": "datastory.html#songs-per-artist---top-30-artists",
     "title": "Data Story",
-    "section": "1.2 Songs Per Artist - Top 30 Artists",
-    "text": "1.2 Songs Per Artist - Top 30 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+    "section": "1.3 Songs Per Artist - Top 30 Artists",
+    "text": "1.3 Songs Per Artist - Top 30 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
   },
   {
     "objectID": "datastory.html#songs-overall-statistics",
@@ -221,7 +221,7 @@
     "href": "datastory.html#year-versus-explicit-content",
     "title": "Data Story",
     "section": "2.2 Year versus Explicit Content",
-    "text": "2.2 Year versus Explicit Content\nThe area plot below illustrates the relationship between the year of song published and explicit songs.\nHover over each point to see its individual values."
+    "text": "2.2 Year versus Explicit Content\nThe area plot below illustrates the relationship between the year of song published and explicit songs.\nHover over each point to see its individual values.\n2018 has the most number of explicit songs, at 49 songs."
   },
   {
     "objectID": "myprojects.html#dataset-overview",
@@ -235,6 +235,90 @@
     "href": "datastory.html#names-and-meanings-of-variables-in-dataset",
     "title": "Data Story",
     "section": "",
-    "text": "“artist” refers to the name of the Artist.\n“song” refers to the name of the song track.\n“explicit” refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.\n“year” refers to the release year of the track.\n“popularity” refers to the popularity level of the track. The higher the value the more popular the song is.\n“speechiness” refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.\n“tempo” refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration."
+    "text": "“artist” refers to the name of the Artist.\n“song” refers to the name of the song track.\n“explicit” refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.\n“year” refers to the release year of the track.\n“popularity” refers to the popularity level of the track. The higher the value the more popular the song is.\n“speechiness” refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.\n“tempo” refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.\n“loudness” refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.\n“acousticness” refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.\n“valence” refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0."
+  },
+  {
+    "objectID": "datastory.html#overview-statistics",
+    "href": "datastory.html#overview-statistics",
+    "title": "Data Story",
+    "section": "1.0 Overview Statistics",
+    "text": "1.0 Overview Statistics\nHere is a breakdown of the general statistics for the cleaned dataset."
+  },
+  {
+    "objectID": "datastory.html#number-of-songs-and-artists",
+    "href": "datastory.html#number-of-songs-and-artists",
+    "title": "Data Story",
+    "section": "1.1 Number of songs and artists",
+    "text": "1.1 Number of songs and artists\nNumber of artists:\n\n\n[1] 835\n\n\nNumber of songs:\n\n\n[1] 1941"
+  },
+  {
+    "objectID": "datastory.html#how-does-the-explicit-value-of-a-song-affect-its-popularity",
+    "href": "datastory.html#how-does-the-explicit-value-of-a-song-affect-its-popularity",
+    "title": "Data Story",
+    "section": "2.0 How does the explicit value of a song affect its popularity?",
+    "text": "2.0 How does the explicit value of a song affect its popularity?"
+  },
+  {
+    "objectID": "datastory.html#songs-per-artist---top-100-artists",
+    "href": "datastory.html#songs-per-artist---top-100-artists",
+    "title": "Data Story",
+    "section": "1.3 Songs Per Artist - Top 100 Artists",
+    "text": "1.3 Songs Per Artist - Top 100 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+  },
+  {
+    "objectID": "datastory.html#how-does-speechines-and-tempo-affect-popularity",
+    "href": "datastory.html#how-does-speechines-and-tempo-affect-popularity",
+    "title": "Data Story",
+    "section": "3.0 How does speechines and tempo affect popularity?",
+    "text": "3.0 How does speechines and tempo affect popularity?"
+  },
+  {
+    "objectID": "datastory.html#distribution-of-song-speechiness",
+    "href": "datastory.html#distribution-of-song-speechiness",
+    "title": "Data Story",
+    "section": "3.1 Distribution of Song Speechiness",
+    "text": "3.1 Distribution of Song Speechiness"
+  },
+  {
+    "objectID": "datastory.html#distribution-of-song-tempo",
+    "href": "datastory.html#distribution-of-song-tempo",
+    "title": "Data Story",
+    "section": "3.2 Distribution of Song Tempo",
+    "text": "3.2 Distribution of Song Tempo"
+  },
+  {
+    "objectID": "datastory.html#how-does-different-song-attributes-affect-popularity",
+    "href": "datastory.html#how-does-different-song-attributes-affect-popularity",
+    "title": "Data Story",
+    "section": "3.0 How does different song attributes affect popularity?",
+    "text": "3.0 How does different song attributes affect popularity?\nFirstly, let’s take a look at the distribution of different song attributes."
+  },
+  {
+    "objectID": "datastory.html#distribution-of-song-loudness",
+    "href": "datastory.html#distribution-of-song-loudness",
+    "title": "Data Story",
+    "section": "3.3 Distribution of Song Loudness",
+    "text": "3.3 Distribution of Song Loudness"
+  },
+  {
+    "objectID": "datastory.html#distribution-of-song-acousticness",
+    "href": "datastory.html#distribution-of-song-acousticness",
+    "title": "Data Story",
+    "section": "3.4 Distribution of Song Acousticness",
+    "text": "3.4 Distribution of Song Acousticness"
+  },
+  {
+    "objectID": "datastory.html#distribution-of-song-valence",
+    "href": "datastory.html#distribution-of-song-valence",
+    "title": "Data Story",
+    "section": "3.5 Distribution of Song Valence",
+    "text": "3.5 Distribution of Song Valence"
+  },
+  {
+    "objectID": "datastory.html#distribution-of-different-song-attributes",
+    "href": "datastory.html#distribution-of-different-song-attributes",
+    "title": "Data Story",
+    "section": "3.1 Distribution of Different Song Attributes",
+    "text": "3.1 Distribution of Different Song Attributes"
   }
 ]

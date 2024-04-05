@@ -39,7 +39,7 @@ ui <- fluidPage(
       conditionalPanel(
         condition = "input.dataset ==='Cleaned Dataset'",
         h1("Cleaned Dataset"),
-        h4("This dataset has a total of 1941 rows by 7 columns.")
+        h4("This dataset has a total of 1941 rows by 10 columns.")
       ),
       
       # Output: HTML table with requested number of observations ----

@@ -2,7 +2,7 @@
 title: "About Me"
 ---
 
-Hi! I am Yin Shuen, a Year 2 Communications and New Media student. In my spare time, I enjoy watching movies, checking out new food places and listening to songs on Spotify.
+Hello and welcome to my webpage! I am Yin Shuen, a Year 2 Communications and New Media student. In my spare time, I enjoy watching movies, checking out new food places and listening to songs on Spotify.
 
 The wide variety of song genres and artists available on streaming platform Spotify provides me with many options when it comes to song choices. This makes me interested in diving deeper in data insights regarding the song offerings in Spotify.
 
