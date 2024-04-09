@@ -6,13 +6,15 @@ title: "Data Story"
 
 I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.
 
+The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019. 
+
 You can view both original and cleaned datasets here:
 
 ```{=html}
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
 ```
-## Names and Meanings of Variables in Dataset
+## Names and Meanings of Variables in Cleaned Dataset
 
 "artist" refers to the name of the Artist.
 
@@ -70,9 +72,8 @@ nrow(df)
 
 ## 1.2 Songs Per Year
 
-The bar plot below consolidates the number of songs released for each year, between 1998 and 2020. Hover over each respective bar to see the individual values.
+The bar plot below consolidates the number of songs released for each year, between 1999 and 2019. Hover over each respective bar to see the individual values.
 
-*2012 has the highest number of songs, at 113 songs.*
 
 ```{r, echo=FALSE, message = FALSE}
 library(dplyr)
@@ -104,26 +105,27 @@ hover_text <- data.frame(year = songs_per_year$year,
 
 p
 ```
-
+<p style="color:#6200EA;">Findings:</p>
+<p style="color:#6200EA;">2012 has the highest number of songs, at 113 songs.</p>
 ## 1.3 Songs Per Artist - Top 100 Artists
 
 The interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.
 
 Adjust the slider to select your preferred number of artists to show in the chart.
 
-*The artist with the most number of featured songs is Rihanna, with 25 songs.*
 
 ```{=html}
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App2/"> </iframe>
 ```
+<p style="color:#6200EA;">Findings:</p>
+<p style="color:#6200EA;">The artist with the most number of featured songs is Rihanna, with 25 songs.</p>
+
 ## 1.4 Top 25 Songs Based On Popularity
 
 Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
 
 Hover over each point to its individual popularity level out of 100.
-
-*The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.*
 
 ```{r, echo=FALSE, warning = FALSE}
 library(ggplot2)
@@ -131,35 +133,33 @@ library(dplyr)
 library(gganimate)
 library(plotly)
 
-
 # Arrange dataframe by 'popularity' in descending order and select top 25 rows
 df_top <- df %>%
   arrange(desc(popularity)) %>%
   select(popularity, song) %>%
-   head(25) 
-
-
-
+  head(25)
 
 # Create line plot
 p <- ggplot(df_top, aes(x = reorder(song, -popularity), y = popularity, group = 1)) +
   geom_line(colour = "blue") +
   geom_point(colour = "blue") +
-  labs(title = "Top 25 Spotify Songs in Track List", x = "Song", y = "Popularity") +
+  labs(title = "Top 25 Songs Based on Popularity", x = "Song", y = "Popularity") +
   scale_color_manual(values = "blue") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
-  guides(fill = FALSE)
+  guides(fill = FALSE) +
+  scale_y_continuous(limits = c(82, 90))
 
 p <- p + transition_states(states = song, transition_length = 2)
 
 ggplotly(p, tooltip = c("song", "popularity")) %>%
   style(xaxis = list(title = "Song"),
         yaxis = list(title = "Popularity"),
-        title = "Top 25 songs")
-
-
+        title = "Top 25 Songs")
 ```
+<p style="color:#6200EA;">Findings:</p>
+
+<p style="color:#6200EA;"> The most popular song is Sweater Weather, with a popularity rating of 89 out of 100. </p>
 
 ## [2.0 How does the explicit value of a song affect its popularity?]{.underline}
 
@@ -167,17 +167,14 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
 
 This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
 
-*27.7% , or the minority of the songs in this dataset, are explicit.*
-
-```{r, message = FALSE, echo=FALSE}
+```{r, message = FALSE, echo = FALSE}
 library(tidyverse)
 df<- read_csv("df.csv")
+
 # Group the data by 'explicit'
 df_grouped <- df %>%
   group_by(explicit) %>%
   summarise(total_songs =n())
-
-
 
 # Calculate the percentage of each variable
 df_grouped <- df_grouped %>%
@@ -187,16 +184,15 @@ df_grouped <- df_grouped %>%
 df_sorted <- df_grouped %>%
   arrange(desc(total_songs))
 
-
-
 # Create a pie chart
 pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
   geom_bar(width = 1, stat = "identity") +
   coord_polar("y", start = 0) +
-  scale_fill_manual(values = c("blue", "red")) +
+  scale_fill_manual(values = c("blue", "red"),
+                    labels = c("Explicit", "Non-explicit")) +
   geom_text(aes(label = paste0(round(percent, 1), "%")),
             position = position_stack(vjust = 0.5), color ="white") +
-  labs(title = "Songs containing explicit content",
+  labs(title = "Songs Containing Explicit Content",
        x = NULL,
        y = NULL,
        fill = NULL,
@@ -209,14 +205,14 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
 # Display the plot
 print(pie_chart)
 ```
-
-## 2.2 Year versus Explicit Content
+<p style="color:#6200EA;">Findings:</p>
+<p style="color:#6200EA;"> 27.6%, or the minority of the songs in this dataset, are explicit. </p>
+## 2.2 Songs Containing Explicit Content By Year
 
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
 Hover over each point to see its individual values.
 
-*2018 has the most number of explicit songs, at 49 songs.*
 
 ```{r, echo = FALSE, message = FALSE}
 library(ggplot2)
@@ -244,26 +240,30 @@ plot <- plotly_build(plot)
 
 plot
 ```
+<p style="color:#6200EA;"> Findings:</p>
 
-## 2.3 Popularity versus Explicit Songs
+<p style="color:#6200EA;"> 2018 contained the most number of explicit songs, at 49 songs, while 1999 contained the least, at 8 songs.</p>
+
+## 2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)
 
 The box plots below visualises the popularity of songs based on whether they are explicit or not.
 
 Hover over each plot to see its individual values.
 
-_The median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs._
-
-```{r, echo=FALSE}
-
-
+```{r, echo = FALSE, message = FALSE}
 # Load the necessary libraries
 library(ggplot2)
 library(plotly)
+library(tidyverse)
+df<- read_csv("df.csv")
+
+# Convert the boolean values to "explicit" and "non-explicit"
+df$explicit <- ifelse(df$explicit == TRUE, "Explicit", "Non-explicit")
 
 # Create the box plot using ggplot
 plot <- ggplot(df, aes(x = explicit, y = popularity, fill = explicit)) +
   geom_boxplot() +
-  labs(title = "Popularity versus explicit songs",
+  labs(title = "How Does Explicit Level of Song Impact Song Popularity?",
        x = "Explicit Songs",
        y = "Popularity") +
   scale_fill_manual(values = c("steelblue", "darkred")) +
@@ -279,19 +279,25 @@ plot$data[[1]]$text <- paste(
   "<br><b>Popularity:</b> ", df$popularity
 )
 
-# Animate the plot using gganimate
+# Animate the plot using gganimate (optional)
 plot <- plotly_build(plot)
-
 
 # Print the animation
 plot
-
-
 ```
 
-## 3.0 How does different song attributes affect popularity?
 
-Firstly, let's take a look at the distribution of different song attributes.
+<p style="color:#6200EA;"> Findings:</p>
+
+<p style="color:#6200EA;">The median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs.</p>
+
+<p style="color:#6200EA;">The difference in minimum values between the two plots is 7, but the differences in the maximum values is 1. Notably, the dispersion or inter-quartile range for values for explicit versus non-explicit songs are the same, at 17. This suggests that despite the significant difference in minimum values, it is likely that the non-explicit songs contain songs with low popularity levels that were not present in explicit songs. </p>
+
+<p style="color:#6200EA;">Overall, I can conclude that popularity is not signficantly affected by whether songs are explicit or not. </p>
+
+## 3.0 How does different song attributes affect popularity? (Numeric variables)
+
+Firstly, let's take a look at the distribution of different song attributes. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence.
 
 ## 3.1 Distribution of Different Song Attributes
 

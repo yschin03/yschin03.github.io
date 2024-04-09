@@ -24,7 +24,7 @@ ui <- fluidPage(
       # Input: Numeric entry for number of obs to view ----
       numericInput(inputId = "obs",
                    label = "Number of observations to view:",
-                   value = 20)
+                   value = 30)
     ),
     
     # Main panel for displaying outputs ----
@@ -39,7 +39,7 @@ ui <- fluidPage(
       conditionalPanel(
         condition = "input.dataset ==='Cleaned Dataset'",
         h1("Cleaned Dataset"),
-        h4("This dataset has a total of 1941 rows by 10 columns.")
+        h4("This dataset has a total of 1937 rows by 10 columns.")
       ),
       
       # Output: HTML table with requested number of observations ----

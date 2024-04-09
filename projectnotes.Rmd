@@ -45,17 +45,19 @@ library(tidyverse)
 ```
 
 ##first read file, remove duplicate values, remove NA, select relevant columns
-I will be focusing on these columns only: 'artist', 'song', 'explicit', 'year', 'popularity', 'speechiness', 'tempo', 'genre'.
+
 ```{r}
+library(tidyverse)
+
 df <- read_csv("songs_normalize.csv") %>%
   unique() %>%
   na.omit() %>%
-  select(artist, song, explicit, year, popularity, speechiness, tempo, genre)
-
+  filter(!(year %in% c(1998, 2020))) %>%
+  select(artist, song, explicit, year, popularity, speechiness, tempo, loudness, acousticness, valence)
 df
-
 write.csv(df, "/Users/yschin/AY2324 Sem 2 Course Content/NM2207/yschin03.github.io/df.csv", row.names = FALSE)
 ```
+
 
 
 ##NOTE: USE df FOR DATASET FROM HERE ONWARDS
@@ -262,19 +264,41 @@ print(plot)
   
 ## 8. Popularity versus explicit songs
 
-```{r}
+```{r, echo = FALSE}
+# Load the necessary libraries
+library(ggplot2)
+library(plotly)
+library(tidyverse)
+df<- read_csv("df.csv")
 
+# Convert the boolean values to "explicit" and "non-explicit"
+df$explicit <- ifelse(df$explicit == TRUE, "Explicit", "Non-explicit")
 
-ggplot(df, aes(x = explicit, y = popularity, fill = explicit)) +
+# Create the box plot using ggplot
+plot <- ggplot(df, aes(x = explicit, y = popularity, fill = explicit)) +
   geom_boxplot() +
-  labs(title = "Popularity versus explicit songs",
-       x = "Explicit content",
+  labs(title = "How Does Explicit Level of Song Impact Song Popularity?",
+       x = "Explicit Songs",
        y = "Popularity") +
   scale_fill_manual(values = c("steelblue", "darkred")) +
   theme_minimal() +
   theme(legend.position = "none")
 
-```  
+# Convert the ggplot object to a plotly object
+plot <- ggplotly(plot, tooltip = c("text"))
+
+# Customize the tooltip text
+plot$data[[1]]$text <- paste(
+  "<b>Explicit:</b> ", df$explicit,
+  "<br><b>Popularity:</b> ", df$popularity
+)
+
+# Animate the plot using gganimate (optional)
+plot <- plotly_build(plot)
+
+# Print the animation
+plot
+```
   
 ## 9. tempo vs popularity  
 ```{r setup, include=FALSE}
@@ -436,6 +460,26 @@ shinyApp(ui = ui, server = server)
 
 
 
+## 3.2 Distribution of Song Speechiness
+
+```{r, message = FALSE, echo = FALSE, warning = FALSE}
+library(ggplot2)
+library(ggplot2)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+p <- ggplot(df, aes(x=speechiness)) +
+  geom_histogram(binwidth=0.01, fill="#BA110C", color="black") +
+  labs(x="Speechiness", y="Count", title="Distribution of Song Speechiness")
+
+p <- p + transition_states(states = speechiness,
+                           transition_length = 2,
+                           state_length = 1)
+
+ggplotly(p)
+```
 
 
 ## 3.2 Distribution of Song Tempo
@@ -459,7 +503,6 @@ p <- p + transition_states(states = tempo,
 
 ggplotly(p)
 ```
-
 
 ## 3.3 Distribution of Song Loudness
 ```{r, message = FALSE, echo = FALSE}
