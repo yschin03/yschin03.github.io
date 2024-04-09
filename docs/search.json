@@ -319,7 +319,7 @@
     "href": "datastory.html#distribution-of-different-song-attributes",
     "title": "Data Story",
     "section": "3.1 Distribution of Different Song Attributes",
-    "text": "3.1 Distribution of Different Song Attributes"
+    "text": "3.1 Distribution of Different Song Attributes\n\n \n\nFindings:\n\n\n\n\n\n\nsong_attribute\noverall_shape\nobservation\n\n\n\n\nSpeechiness\nRight-skewed\nMost songs have low speechiness of below 0.1.\n\n\nTempo\nNormal\nMost songs have moderate tempo between 100 to 150BPM.\n\n\nLoudness\nLeft-skewed\nMost songs have moderate loudness of around -5dB.\n\n\nAcousticness\nRight-skewed\nMost songs have low acousticness of 0.\n\n\nValence\nNormal\nValence is rather evenly split, with a higher proportion falling between 0.5 to 0.75."
   },
   {
     "objectID": "datastory.html#how-does-explicit-level-of-song-impact-song-popularity",
@@ -347,13 +347,13 @@
     "href": "datastory.html#how-does-explicit-level-of-song-impact-song-popularity-categorical-variable",
     "title": "Data Story",
     "section": "2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)",
-    "text": "2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)\nThe box plots below visualises the popularity of songs based on whether they are explicit or not.\nHover over each plot to see its individual values.\n\n\n\n\n\n\n\nFindings:\n\n\nThe median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs.\n\n\nThe difference in minimum values between the two plots is 7, but the differences in the maximum values is 1. Notably, the dispersion or inter-quartile range for values for explicit versus non-explicit songs are the same, at 17. This suggests that despite the significant difference in minimum values, it is likely that the non-explicit songs contain songs with low popularity levels that were not present in explicit songs.\n\n\nOverall, I can conclude that popularity is not signficantly affected by whether songs are explicit or not."
+    "text": "2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)\nThe box plots below visualises the popularity of songs based on whether they are explicit or not.\nHover over each plot to see its individual values.\n\n\n\n\n\n\n\nFindings:\n\n\nThe median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs.\n\n\nThe difference in minimum values between the two plots is 7, but the differences in the maximum values is 1. Notably, the dispersion or inter-quartile range for values for explicit versus non-explicit songs are the same, at 17. This suggests that despite the significant difference in minimum values, it is likely that the non-explicit songs contain songs with low popularity levels that were not present in explicit songs.\n\n\nOverall, I can conclude that popularity is not significantly affected by whether songs are explicit or not."
   },
   {
     "objectID": "datastory.html#how-does-different-song-attributes-affect-popularity-numeric-variables",
     "href": "datastory.html#how-does-different-song-attributes-affect-popularity-numeric-variables",
     "title": "Data Story",
     "section": "3.0 How does different song attributes affect popularity? (Numeric variables)",
-    "text": "3.0 How does different song attributes affect popularity? (Numeric variables)\nFirstly, let’s take a look at the distribution of different song attributes. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence."
+    "text": "3.0 How does different song attributes affect popularity? (Numeric variables)\nFirstly, let’s take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence."
   }
 ]

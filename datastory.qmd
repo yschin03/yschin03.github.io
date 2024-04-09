@@ -6,7 +6,7 @@ title: "Data Story"
 
 I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.
 
-The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019. 
+The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019.
 
 You can view both original and cleaned datasets here:
 
@@ -34,7 +34,7 @@ You can view both original and cleaned datasets here:
 
 "acousticness" refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
 
-"valence" refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0. 
+"valence" refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0.
 
 # Data Visualisation
 
@@ -44,7 +44,7 @@ The main question I wish to answer is **"What determines the extent of popularit
 
 ------------------------------------------------------------------------
 
-## 1.0 Overview Statistics
+## [1.0 Overview Statistics]{.underline}
 
 Here is a breakdown of the general statistics for the cleaned dataset.
 
@@ -73,7 +73,6 @@ nrow(df)
 ## 1.2 Songs Per Year
 
 The bar plot below consolidates the number of songs released for each year, between 1999 and 2019. Hover over each respective bar to see the individual values.
-
 
 ```{r, echo=FALSE, message = FALSE}
 library(dplyr)
@@ -105,20 +104,23 @@ hover_text <- data.frame(year = songs_per_year$year,
 
 p
 ```
+
 <p style="color:#6200EA;">Findings:</p>
+
 <p style="color:#6200EA;">2012 has the highest number of songs, at 113 songs.</p>
+
 ## 1.3 Songs Per Artist - Top 100 Artists
 
 The interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.
 
 Adjust the slider to select your preferred number of artists to show in the chart.
 
-
 ```{=html}
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App2/"> </iframe>
 ```
 <p style="color:#6200EA;">Findings:</p>
+
 <p style="color:#6200EA;">The artist with the most number of featured songs is Rihanna, with 25 songs.</p>
 
 ## 1.4 Top 25 Songs Based On Popularity
@@ -157,9 +159,10 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
         yaxis = list(title = "Popularity"),
         title = "Top 25 Songs")
 ```
+
 <p style="color:#6200EA;">Findings:</p>
 
-<p style="color:#6200EA;"> The most popular song is Sweater Weather, with a popularity rating of 89 out of 100. </p>
+<p style="color:#6200EA;">The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.</p>
 
 ## [2.0 How does the explicit value of a song affect its popularity?]{.underline}
 
@@ -205,14 +208,16 @@ pie_chart <- ggplot(df_sorted, aes(x = "", y = total_songs, fill = explicit)) +
 # Display the plot
 print(pie_chart)
 ```
+
 <p style="color:#6200EA;">Findings:</p>
-<p style="color:#6200EA;"> 27.6%, or the minority of the songs in this dataset, are explicit. </p>
+
+<p style="color:#6200EA;">27.6%, or the minority of the songs in this dataset, are explicit.</p>
+
 ## 2.2 Songs Containing Explicit Content By Year
 
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
 Hover over each point to see its individual values.
-
 
 ```{r, echo = FALSE, message = FALSE}
 library(ggplot2)
@@ -225,7 +230,7 @@ df_explicit <- df %>%
   arrange (year)
 
 plot <- ggplot(df_explicit, aes(x = year, y = n)) +
-  geom_area(fill = "red", alpha = 0.5) +
+  geom_area(fill = "pink", alpha = 0.5) +
   geom_point(colour = "red", size = 1) +
   labs(title = "Number of explicit songs by year",
        x = "Year",
@@ -240,9 +245,10 @@ plot <- plotly_build(plot)
 
 plot
 ```
-<p style="color:#6200EA;"> Findings:</p>
 
-<p style="color:#6200EA;"> 2018 contained the most number of explicit songs, at 49 songs, while 1999 contained the least, at 8 songs.</p>
+<p style="color:#6200EA;">Findings:</p>
+
+<p style="color:#6200EA;">2018 contained the most number of explicit songs, at 49 songs, while 1999 contained the least, at 8 songs.</p>
 
 ## 2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)
 
@@ -286,25 +292,40 @@ plot <- plotly_build(plot)
 plot
 ```
 
-
-<p style="color:#6200EA;"> Findings:</p>
+<p style="color:#6200EA;">Findings:</p>
 
 <p style="color:#6200EA;">The median popularity of explicit songs is 67 while that of non-explicit songs is 65. This shows that the explicit value of songs does contribute to its popularity slightly, as seen from the overall higher values found in explicit songs compared to non-explicit songs.</p>
 
-<p style="color:#6200EA;">The difference in minimum values between the two plots is 7, but the differences in the maximum values is 1. Notably, the dispersion or inter-quartile range for values for explicit versus non-explicit songs are the same, at 17. This suggests that despite the significant difference in minimum values, it is likely that the non-explicit songs contain songs with low popularity levels that were not present in explicit songs. </p>
+<p style="color:#6200EA;">The difference in minimum values between the two plots is 7, but the differences in the maximum values is 1. Notably, the dispersion or inter-quartile range for values for explicit versus non-explicit songs are the same, at 17. This suggests that despite the significant difference in minimum values, it is likely that the non-explicit songs contain songs with low popularity levels that were not present in explicit songs.</p>
 
-<p style="color:#6200EA;">Overall, I can conclude that popularity is not signficantly affected by whether songs are explicit or not. </p>
+<p style="color:#6200EA;">Overall, I can conclude that popularity is not significantly affected by whether songs are explicit or not.</p>
 
-## 3.0 How does different song attributes affect popularity? (Numeric variables)
+## [3.0 How does different song attributes affect popularity? (Numeric variables)]{.underline}
 
-Firstly, let's take a look at the distribution of different song attributes. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence.
+Firstly, let's take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence.
 
 ## 3.1 Distribution of Different Song Attributes
-
 
 ```{=html}
 
 <iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App3/"> </iframe>
 ```
+<p style="color:#6200EA;">Findings:</p>
+
+```{r, echo = FALSE, message = FALSE}
+# Load the necessary library
+library(knitr)
+library(kableExtra)
 
 
+# Create a data frame
+findings <- data.frame(
+  song_attribute = c("Speechiness", "Tempo", "Loudness", "Acousticness", "Valence"),
+  overall_shape = c("Right-skewed", "Normal", "Left-skewed", "Right-skewed", "Normal"),
+  observation = c("Most songs have low speechiness of below 0.1.", "Most songs have moderate tempo between 100 to 150BPM.", "Most songs have moderate loudness of around -5dB.","Most songs have low acousticness of 0.","Valence is rather evenly split, with a higher proportion falling between 0.5 to 0.75.")
+)
+
+# Create a table using kable
+kable(findings) %>%
+  kable_styling()
+```
