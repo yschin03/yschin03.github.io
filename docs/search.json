@@ -249,7 +249,7 @@
     "href": "datastory.html#number-of-songs-and-artists",
     "title": "Data Story",
     "section": "1.1 Number of songs and artists",
-    "text": "1.1 Number of songs and artists\nNumber of artists:\n\n\n[1] 832\n\n\nNumber of songs:\n\n\n[1] 1937"
+    "text": "1.1 Number of songs and artists\nNumber of artists:\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\nartists &lt;- df$artist %&gt;%\n  unique() %&gt;%\n  length() \nartists\n\n[1] 832\n\n\nNumber of songs:\n\nnrow(df)\n\n[1] 1937"
   },
   {
     "objectID": "datastory.html#how-does-the-explicit-value-of-a-song-affect-its-popularity",
@@ -361,41 +361,55 @@
     "href": "datastory.html#individual-analysis-of-impact-of-song-attributes-on-popularity",
     "title": "Data Story",
     "section": "3.2 Individual Analysis of Impact of Song Attributes on Popularity",
-    "text": "3.2 Individual Analysis of Impact of Song Attributes on Popularity"
+    "text": "3.2 Individual Analysis of Impact of Song Attributes on Popularity\nScatter plots, regression lines and correlation coeffients were portrayed to analyse the relationship between each individual song attribute and popularity."
   },
   {
     "objectID": "datastory.html#effect-of-tempo-on-popularity",
     "href": "datastory.html#effect-of-tempo-on-popularity",
     "title": "Data Story",
-    "section": "3.2.1 Effect of Tempo on Popularity",
-    "text": "3.2.1 Effect of Tempo on Popularity"
+    "section": "3.2.2 Effect of Tempo on Popularity",
+    "text": "3.2.2 Effect of Tempo on Popularity\n\n\n\n\n\nI further calculated the correlation coefficient to confirm the association between tempo and popularity.\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\n\ncorrelation &lt;- cor(df$tempo, df$popularity)\nprint(paste(\"Correlation coefficient between tempo and popularity:\", round(correlation, 3)))\n\n[1] \"Correlation coefficient between tempo and popularity: 0.011\""
   },
   {
     "objectID": "datastory.html#effect-of-speechiness-on-popularity",
     "href": "datastory.html#effect-of-speechiness-on-popularity",
     "title": "Data Story",
-    "section": "3.2.2 Effect of Speechiness on Popularity",
-    "text": "3.2.2 Effect of Speechiness on Popularity"
+    "section": "3.2.1 Effect of Speechiness on Popularity",
+    "text": "3.2.1 Effect of Speechiness on Popularity\n\n\n\n\n\nI further calculated the correlation coefficient to confirm the association between speechiness and popularity.\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\n\ncorrelation &lt;- cor(df$speechiness, df$popularity)\nprint(paste(\"Correlation coefficient between speechiness and popularity:\", round(correlation, 3)))\n\n[1] \"Correlation coefficient between speechiness and popularity: 0.023\""
   },
   {
     "objectID": "datastory.html#effect-of-loudness-on-popularity",
     "href": "datastory.html#effect-of-loudness-on-popularity",
     "title": "Data Story",
     "section": "3.2.3 Effect of Loudness on Popularity",
-    "text": "3.2.3 Effect of Loudness on Popularity"
+    "text": "3.2.3 Effect of Loudness on Popularity\n\n\n\n\n\nI further calculated the correlation coefficient to confirm the association between loudness and popularity.\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\n\ncorrelation &lt;- cor(df$loudness, df$popularity)\nprint(paste(\"Correlation coefficient between loudness and popularity:\", round(correlation, 3)))\n\n[1] \"Correlation coefficient between loudness and popularity: 0.03\""
   },
   {
     "objectID": "datastory.html#effect-of-acousticness-on-popularity",
     "href": "datastory.html#effect-of-acousticness-on-popularity",
     "title": "Data Story",
     "section": "3.2.4 Effect of Acousticness on Popularity",
-    "text": "3.2.4 Effect of Acousticness on Popularity"
+    "text": "3.2.4 Effect of Acousticness on Popularity\n\n\n\n\n\nI further calculated the correlation coefficient to confirm the association between acousticness and popularity.\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\n\ncorrelation &lt;- cor(df$acousticness, df$popularity)\nprint(paste(\"Correlation coefficient between acousticness and popularity:\", round(correlation, 3)))\n\n[1] \"Correlation coefficient between acousticness and popularity: 0.022\""
   },
   {
     "objectID": "datastory.html#effect-of-valence-on-popularity",
     "href": "datastory.html#effect-of-valence-on-popularity",
     "title": "Data Story",
-    "section": "3.2.3 Effect of Valence on Popularity",
-    "text": "3.2.3 Effect of Valence on Popularity"
+    "section": "3.2.5 Effect of Valence on Popularity",
+    "text": "3.2.5 Effect of Valence on Popularity\n\n\n\n\n\nI further calculated the correlation coefficient to confirm the association between valence and popularity.\n\nlibrary(tidyverse)\ndf &lt;- read_csv(\"df.csv\")\n\ncorrelation &lt;- cor(df$valence, df$popularity)\nprint(paste(\"Correlation coefficient between valence and popularity:\", round(correlation, 3)))\n\n[1] \"Correlation coefficient between valence and popularity: -0.012\""
+  },
+  {
+    "objectID": "datastory.html#how-does-different-song-attributes-affect-song-popularity-numeric-variables",
+    "href": "datastory.html#how-does-different-song-attributes-affect-song-popularity-numeric-variables",
+    "title": "Data Story",
+    "section": "3.0 How Does Different Song Attributes Affect Song Popularity? (Numeric variables)",
+    "text": "3.0 How Does Different Song Attributes Affect Song Popularity? (Numeric variables)\nFirstly, let’s take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence."
+  },
+  {
+    "objectID": "datastory.html#overall-findings",
+    "href": "datastory.html#overall-findings",
+    "title": "Data Story",
+    "section": "3.2.6 Overall findings",
+    "text": "3.2.6 Overall findings\n\nTable consolidating correlation coefficients of all 5 song attributes:\n\n\n\n\n\n\nsong_attribute\ncorrelation_coefficient\n\n\n\n\nSpeechiness\n0.023\n\n\nTempo\n0.011\n\n\nLoudness\n0.030\n\n\nAcousticness\n0.022\n\n\nValence\n-0.012\n\n\n\n\n\n\n\n\nOverall, the five song attributes: speechiness, tempo, loudness, acousticness and valence do not have significant effects on song popularity. All have weak associations with popularity. Notably, speechiness, tempo, loudness and acousticness are positively associated with popularity, while only valence is negatively associated.\n\n\nDiving deeper into each individual correlation coefficient, it is also seen that loudness is most strongly associated with popularity, followed by speechiness then acousticness."
   }
 ]
