@@ -355,5 +355,47 @@
     "title": "Data Story",
     "section": "3.0 How does different song attributes affect popularity? (Numeric variables)",
     "text": "3.0 How does different song attributes affect popularity? (Numeric variables)\nFirstly, let’s take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence."
+  },
+  {
+    "objectID": "datastory.html#individual-analysis-of-impact-of-song-attributes-on-popularity",
+    "href": "datastory.html#individual-analysis-of-impact-of-song-attributes-on-popularity",
+    "title": "Data Story",
+    "section": "3.2 Individual Analysis of Impact of Song Attributes on Popularity",
+    "text": "3.2 Individual Analysis of Impact of Song Attributes on Popularity"
+  },
+  {
+    "objectID": "datastory.html#effect-of-tempo-on-popularity",
+    "href": "datastory.html#effect-of-tempo-on-popularity",
+    "title": "Data Story",
+    "section": "3.2.1 Effect of Tempo on Popularity",
+    "text": "3.2.1 Effect of Tempo on Popularity"
+  },
+  {
+    "objectID": "datastory.html#effect-of-speechiness-on-popularity",
+    "href": "datastory.html#effect-of-speechiness-on-popularity",
+    "title": "Data Story",
+    "section": "3.2.2 Effect of Speechiness on Popularity",
+    "text": "3.2.2 Effect of Speechiness on Popularity"
+  },
+  {
+    "objectID": "datastory.html#effect-of-loudness-on-popularity",
+    "href": "datastory.html#effect-of-loudness-on-popularity",
+    "title": "Data Story",
+    "section": "3.2.3 Effect of Loudness on Popularity",
+    "text": "3.2.3 Effect of Loudness on Popularity"
+  },
+  {
+    "objectID": "datastory.html#effect-of-acousticness-on-popularity",
+    "href": "datastory.html#effect-of-acousticness-on-popularity",
+    "title": "Data Story",
+    "section": "3.2.4 Effect of Acousticness on Popularity",
+    "text": "3.2.4 Effect of Acousticness on Popularity"
+  },
+  {
+    "objectID": "datastory.html#effect-of-valence-on-popularity",
+    "href": "datastory.html#effect-of-valence-on-popularity",
+    "title": "Data Story",
+    "section": "3.2.3 Effect of Valence on Popularity",
+    "text": "3.2.3 Effect of Valence on Popularity"
   }
 ]

@@ -329,3 +329,119 @@ findings <- data.frame(
 kable(findings) %>%
   kable_styling()
 ```
+
+
+## 3.2 Individual Analysis of Impact of Song Attributes on Popularity
+
+## 3.2.1 Effect of Tempo on Popularity 
+
+```{r, echo = FALSE, message =FALSE}
+library(ggplot2)
+
+
+# Convert the tempo column to numeric
+df$tempo <- as.numeric(df$tempo)
+
+# Create the scatter plot using ggplot
+plot <- ggplot(df, aes(x = tempo, y = popularity, color = tempo)) +
+  geom_point() +
+  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
+                         midpoint = median(df$tempo), space = "Lab") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  labs(title = "Tempo Versus Popularity",
+       x = "Tempo",
+       y = "Popularity")
+plot
+```
+
+## 3.2.2 Effect of Speechiness on Popularity 
+
+```{r, echo = FALSE, message =FALSE}
+library(ggplot2)
+
+
+# Convert the tempo column to numeric
+df$speechiness <- as.numeric(df$speechiness)
+
+# Create the scatter plot using ggplot
+plot <- ggplot(df, aes(x = speechiness, y = popularity, color = speechiness)) +
+  geom_point() +
+  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
+                         midpoint = median(df$speechiness), space = "Lab") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  labs(title = "Speechiness Versus Popularity",
+       x = "Speechiness",
+       y = "Popularity")
+
+plot
+```
+
+## 3.2.3 Effect of Loudness on Popularity 
+
+```{r, echo = FALSE, message =FALSE}
+library(ggplot2)
+
+
+# Convert the tempo column to numeric
+df$loudness <- as.numeric(df$loudness)
+
+# Create the scatter plot using ggplot
+plot <- ggplot(df, aes(x = loudness, y = popularity, color = loudness)) +
+  geom_point() +
+  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
+                         midpoint = median(df$loudness), space = "Lab") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  labs(title = "Loudness Versus Popularity",
+       x = "Loudness",
+       y = "Popularity")
+
+plot
+```
+
+## 3.2.4 Effect of Acousticness on Popularity 
+
+```{r, echo = FALSE, message =FALSE}
+library(ggplot2)
+
+
+# Convert the tempo column to numeric
+df$acousticness <- as.numeric(df$acousticness)
+
+# Create the scatter plot using ggplot
+plot <- ggplot(df, aes(x = acousticness, y = popularity, color = acousticness)) +
+  geom_point() +
+  scale_color_gradient2(low = "#000033", mid = "mediumpurple", high = "red",
+                         midpoint = median(df$acousticness), space = "Lab") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  labs(title = "Acousticness Versus Popularity",
+       x = "Acousticness",
+       y = "Popularity")
+
+plot
+```
+## 3.2.3 Effect of Valence on Popularity 
+
+```{r, echo = FALSE, message =FALSE}
+library(ggplot2)
+
+
+# Convert the tempo column to numeric
+df$loudness <- as.numeric(df$valence)
+
+# Create the scatter plot using ggplot
+plot <- ggplot(df, aes(x = valence, y = popularity, color = valence)) +
+  geom_point() +
+  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
+                         midpoint = median(df$valence), space = "Lab") +
+  theme_minimal() +
+  theme(legend.position = "right") +
+  labs(title = "Valence Versus Popularity",
+       x = "Valence",
+       y = "Popularity")
+
+plot
+```
