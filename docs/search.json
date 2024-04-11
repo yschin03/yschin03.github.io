@@ -53,7 +53,7 @@
     "href": "myprojects.html",
     "title": "My Project",
     "section": "",
-    "text": "In my project, I will be analysing a dataset containing information of the top tracks in Spotify between the year 2000 to 2019. This dataset was taken from Kaggle, a free dataset sharing platform."
+    "text": "In summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
   },
   {
     "objectID": "myprojects.html#top-tracks-in-spotify-2000-to-2019",
@@ -74,7 +74,7 @@
     "href": "myprojects.html#why-this-dataset",
     "title": "My Project",
     "section": "Why this dataset?",
-    "text": "Why this dataset?\nI have been an avid and frequent user of Spotify for quite some time. Over the years, I have developed an interest and habit of listening to top tracks within the streaming platform. Thus, I am keen to analyse the different aspects of top song hits through more in-depth data insights.\nThis dataset is a csv file that contains audio statistics of the top 2000 tracks on Spotify from 2000-2019. The data contains about 18 columns each describing the track and its qualities."
+    "text": "Why this dataset?\nI have been an avid and frequent user of Spotify for quite some time. Over the years, I have developed an interest and habit of listening to top tracks within the streaming platform. Thus, I am keen to analyse the different aspects of top song hits through more in-depth data insights.\nThis dataset is a csv file that contains audio statistics of the top 2000 tracks on Spotify from 1998-2020. The original dataset contains 18 columns which contains the top Spotify tracks and its qualities."
   },
   {
     "objectID": "myprojects.html#overview",
@@ -193,7 +193,7 @@
     "href": "myprojects.html#main-problem-statement",
     "title": "My Project",
     "section": "Main Problem Statement",
-    "text": "Main Problem Statement\nIn my data story, I will be analysing various song properties and their relationships with song popularity.\nThe main question I wish to answer is “What determines the extent of popularity of songs in Spotify?”"
+    "text": "Main Problem Statement\nIn my data story, I will be analysing various song properties and their relationships with song popularity.\nThe main question I wish to answer is “What determines the extent of popularity of songs in this Spotify Top Tracks dataset?”"
   },
   {
     "objectID": "datastory.html#songs-per-artist---top-30-artists",
@@ -417,7 +417,7 @@
     "href": "Conclusion.html",
     "title": "Conclusion",
     "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "text": "In summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\n\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
   },
   {
     "objectID": "Conclusion.html#quarto",
@@ -450,9 +450,9 @@
   {
     "objectID": "conclusion.html",
     "href": "conclusion.html",
-    "title": "Conclusion (Summary of findings)",
+    "title": "Conclusion",
     "section": "",
-    "text": "In conclusion, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\n\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
+    "text": "In summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
   },
   {
     "objectID": "conclusion.html#conclusion-summary-of-findings",
@@ -474,5 +474,19 @@
     "title": "Data Story",
     "section": "Conclusion",
     "text": "Conclusion\nRefer to conclusion of main data insights."
+  },
+  {
+    "objectID": "myprojects.html#top-tracks-in-spotify",
+    "href": "myprojects.html#top-tracks-in-spotify",
+    "title": "My Project",
+    "section": "Top Tracks in Spotify",
+    "text": "Top Tracks in Spotify\n\nIn my project, I will be analysing a dataset containing information of the top tracks in Spotify. This dataset was taken from Kaggle, a free dataset sharing platform."
+  },
+  {
+    "objectID": "datastory.html#overall-conclusion",
+    "href": "datastory.html#overall-conclusion",
+    "title": "Data Story",
+    "section": "Overall Conclusion",
+    "text": "Overall Conclusion\nIn summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\nThank you for reading!"
   }
 ]
