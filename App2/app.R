@@ -17,7 +17,7 @@ ui <- fluidPage(
 # Define the server function
 server <- function(input, output) {
   # Load the data
-  df <- read_csv("songs_normalize.csv")
+  df <- read_csv("df.csv")
   
   # Create the bar plot
   df_grouped <- reactive({

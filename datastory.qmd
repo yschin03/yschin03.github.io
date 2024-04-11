@@ -40,7 +40,7 @@ You can view both original and cleaned datasets here:
 
 Below, I will be analysing various song properties and their relationships with song popularity.
 
-The main question I wish to answer is **"What determines the extent of popularity of songs in Spotify?"**
+The main question I wish to answer is **"What determines the extent of popularity of songs in this Spotify Top Tracks dataset?"**
 
 ------------------------------------------------------------------------
 
@@ -121,9 +121,51 @@ Adjust the slider to select your preferred number of artists to show in the char
 ```
 <p style="color:#6200EA;">Findings:</p>
 
-<p style="color:#6200EA;">The artist with the most number of featured songs is Rihanna, with 25 songs.</p>
+<p style="color:#6200EA;">The artist with the most number of featured songs is Drake and Rihanna, who both have 23 songs.</p>
 
-## 1.4 Top 25 Songs Based On Popularity
+
+## 1.4 Average Popularity of Songs for Top 10 Artists
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(gganimate)
+library(plotly)
+
+df <- read_csv("df.csv")
+
+artists_data <- df %>%
+  group_by(artist) %>%
+  summarise(mean_popularity = mean(popularity, na.rm = TRUE),
+             count = n()) %>%
+  arrange(desc(count)) %>%
+  head(10) %>%
+  select(artist, mean_popularity)
+
+artist_levels <- artists_data$artist
+artists_data$artist <- factor(artists_data$artist, levels = artist_levels)
+
+plot <- ggplot(artists_data, aes(x = artist, y = mean_popularity, size = 15, color = mean_popularity)) +
+  geom_point() +
+  scale_size_identity() +
+  scale_color_gradient(low = "blue", high = "red", name = "Popularity") +
+  labs(title = "Average Popularity of Songs for Top 10 Artists", x = "Artist", y = "Popularity") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  guides(fill = FALSE) +
+  scale_y_continuous(limits = c(60, 75)) +
+  geom_text(aes(label = round(mean_popularity, 2), size = 3), nudge_y = 1.7, color = "black")
+
+plot
+```
+
+<p style="color:#6200EA;">Findings:</p>
+
+<p style="color:#6200EA;">Among the top 10 artists with the most songs featured in this Spotify Top Tracks playlist, the artist which has the highest average popularity is Eminem, followed by Rihanna then Calvis Harris.</p>
+
+## 1.5 Top 25 Songs Based On Popularity
 
 Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
 
@@ -164,7 +206,7 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
 
 <p style="color:#6200EA;">The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.</p>
 
-## [2.0 How does the explicit value of a song affect its popularity?]{.underline}
+## [2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)]{.underline}
 
 ## 2.1 Songs Containing Explicit Content
 
@@ -526,4 +568,5 @@ kable(findings) %>%
 <p style="color:#6200EA;">Diving deeper into each individual correlation coefficient, it is also seen that loudness is most strongly associated with popularity, followed by speechiness then acousticness. </p> 
 
 
-
+## Conclusion
+Refer to [conclusion](https://yschin03.github.io/conclusion.html) of main data insights.

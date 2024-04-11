@@ -1,0 +1,15 @@
+---
+title: "Conclusion (Summary of findings)"
+---
+
+In conclusion, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:
+
+1.  Drake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).
+
+2.  Sweater Weather was the most popular song, with a popularity value of 89/100.
+
+3.  The explicit content of a song does contribute to the popularity of the song, but to a small extent.
+
+4.  Other song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.
+
+<p style="color:red;">Thank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab.</p>

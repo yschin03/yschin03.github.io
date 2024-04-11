@@ -157,8 +157,8 @@
     "objectID": "datastory.html#top-25-songs-based-on-popularity",
     "href": "datastory.html#top-25-songs-based-on-popularity",
     "title": "Data Story",
-    "section": "1.4 Top 25 Songs Based On Popularity",
-    "text": "1.4 Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nHover over each point to its individual popularity level out of 100.\n\n\n\n\n\n\n\nFindings:\n\n\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
+    "section": "1.5 Top 25 Songs Based On Popularity",
+    "text": "1.5 Top 25 Songs Based On Popularity\nLine graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.\nHover over each point to its individual popularity level out of 100.\n\n\n\n\n\n\n\nFindings:\n\n\nThe most popular song is Sweater Weather, with a popularity rating of 89 out of 100."
   },
   {
     "objectID": "datastory.html#songs-containing-explicit-content",
@@ -263,7 +263,7 @@
     "href": "datastory.html#songs-per-artist---top-100-artists",
     "title": "Data Story",
     "section": "1.3 Songs Per Artist - Top 100 Artists",
-    "text": "1.3 Songs Per Artist - Top 100 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\n\n \n\nFindings:\n\n\nThe artist with the most number of featured songs is Rihanna, with 25 songs."
+    "text": "1.3 Songs Per Artist - Top 100 Artists\nThe interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.\nAdjust the slider to select your preferred number of artists to show in the chart.\n\n \n\nFindings:\n\n\nThe artist with the most number of featured songs is Drake and Rihanna, who both have 23 songs."
   },
   {
     "objectID": "datastory.html#how-does-speechines-and-tempo-affect-popularity",
@@ -411,5 +411,68 @@
     "title": "Data Story",
     "section": "3.2.6 Overall findings",
     "text": "3.2.6 Overall findings\n\nTable consolidating correlation coefficients of all 5 song attributes:\n\n\n\n\n\n\nsong_attribute\ncorrelation_coefficient\n\n\n\n\nSpeechiness\n0.023\n\n\nTempo\n0.011\n\n\nLoudness\n0.030\n\n\nAcousticness\n0.022\n\n\nValence\n-0.012\n\n\n\n\n\n\n\n\nOverall, the five song attributes: speechiness, tempo, loudness, acousticness and valence do not have significant effects on song popularity. All have weak associations with popularity. Notably, speechiness, tempo, loudness and acousticness are positively associated with popularity, while only valence is negatively associated.\n\n\nDiving deeper into each individual correlation coefficient, it is also seen that loudness is most strongly associated with popularity, followed by speechiness then acousticness."
+  },
+  {
+    "objectID": "Conclusion.html",
+    "href": "Conclusion.html",
+    "title": "Conclusion",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Conclusion.html#quarto",
+    "href": "Conclusion.html#quarto",
+    "title": "Conclusion",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+  },
+  {
+    "objectID": "Conclusion.html#running-code",
+    "href": "Conclusion.html#running-code",
+    "title": "Conclusion",
+    "section": "Running Code",
+    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+  },
+  {
+    "objectID": "datastory.html#average-popularity-of-songs-for-top-10-artists",
+    "href": "datastory.html#average-popularity-of-songs-for-top-10-artists",
+    "title": "Data Story",
+    "section": "1.4 Average Popularity of Songs for Top 10 Artists",
+    "text": "1.4 Average Popularity of Songs for Top 10 Artists\n\n\n\n\n\n\nFindings:\n\n\nAmong the top 10 artists with the most songs featured in this Spotify Top Tracks playlist, the artist which has the highest average popularity is Eminem, followed by Rihanna then Calvis Harris."
+  },
+  {
+    "objectID": "datastory.html#how-does-the-explicit-value-of-a-song-affect-its-popularity-categorical-variable",
+    "href": "datastory.html#how-does-the-explicit-value-of-a-song-affect-its-popularity-categorical-variable",
+    "title": "Data Story",
+    "section": "2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)",
+    "text": "2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)"
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "Conclusion (Summary of findings)",
+    "section": "",
+    "text": "In conclusion, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\n\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
+  },
+  {
+    "objectID": "conclusion.html#conclusion-summary-of-findings",
+    "href": "conclusion.html#conclusion-summary-of-findings",
+    "title": "Conclusion",
+    "section": "",
+    "text": "In conclusion, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity."
+  },
+  {
+    "objectID": "conclusion.html#thank-you-for-reading-for-more-detailed-insights-please-refer-to-the-full-data-visualisations-and-findings-in-the-data-story-tab.",
+    "href": "conclusion.html#thank-you-for-reading-for-more-detailed-insights-please-refer-to-the-full-data-visualisations-and-findings-in-the-data-story-tab.",
+    "title": "Conclusion (Summary of findings)",
+    "section": "Thank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab.",
+    "text": "Thank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
+  },
+  {
+    "objectID": "datastory.html#conclusion",
+    "href": "datastory.html#conclusion",
+    "title": "Data Story",
+    "section": "Conclusion",
+    "text": "Conclusion\nRefer to conclusion of main data insights."
   }
 ]

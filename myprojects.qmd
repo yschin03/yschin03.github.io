@@ -2,11 +2,11 @@
 title: "My Project"
 ---
 
-## Top Tracks in Spotify (2000 to 2019)
+## Top Tracks in Spotify
 
 ![](images/spotify-music.gif){width="297"}
 
-In my project, I will be analysing a dataset containing information of the **top tracks in Spotify** **between the year 2000 to 2019.** This dataset was taken from [Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019), a free dataset sharing platform.
+In my project, I will be analysing a dataset containing information of the **top tracks in Spotify.** This dataset was taken from [Kaggle](https://www.kaggle.com/datasets/paradisejoy/top-hits-spotify-from-20002019), a free dataset sharing platform.
 
 ## Introduction: An overview of Spotify
 
@@ -16,13 +16,13 @@ Spotify is a digital music, podcast, and video service that provides access to s
 
 I have been an avid and frequent user of Spotify for quite some time. Over the years, I have developed an interest and habit of listening to top tracks within the streaming platform. Thus, I am keen to analyse the different aspects of top song hits through more in-depth data insights.
 
-This dataset is a csv file that contains audio statistics of the top 2000 tracks on Spotify from 2000-2019. The data contains about 18 columns each describing the track and its qualities.
+This dataset is a csv file that contains audio statistics of the top 2000 tracks on Spotify from 1998-2020. The original dataset contains 18 columns which contains the top Spotify tracks and its qualities.
 
 ## Main Problem Statement
 
 In my [data story](https://yschin03.github.io/datastory.html), I will be analysing various song properties and their relationships with song popularity.
 
-The main question I wish to answer is **"What determines the extent of popularity of songs in Spotify?"**
+The main question I wish to answer is **"What determines the extent of popularity of songs in this Spotify Top Tracks dataset?"**
 
 
 

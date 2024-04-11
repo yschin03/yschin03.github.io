@@ -12,6 +12,8 @@ website:
         text: My Project
       - href: datastory.qmd
         text: Data Story
+      - href: conclusion.qmd
+        text: Conclusion
 
 format:
   html:
