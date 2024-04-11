@@ -53,7 +53,7 @@
     "href": "myprojects.html",
     "title": "My Project",
     "section": "",
-    "text": "In summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\nThank you for reading! For more detailed insights, please refer to the full data visualisations and findings in the Data Story tab."
+    "text": "In my project, I will be analysing a dataset containing information of the top tracks in Spotify. This dataset was taken from Kaggle, a free dataset sharing platform."
   },
   {
     "objectID": "myprojects.html#top-tracks-in-spotify-2000-to-2019",
@@ -479,14 +479,14 @@
     "objectID": "myprojects.html#top-tracks-in-spotify",
     "href": "myprojects.html#top-tracks-in-spotify",
     "title": "My Project",
-    "section": "Top Tracks in Spotify",
-    "text": "Top Tracks in Spotify\n\nIn my project, I will be analysing a dataset containing information of the top tracks in Spotify. This dataset was taken from Kaggle, a free dataset sharing platform."
+    "section": "",
+    "text": "In my project, I will be analysing a dataset containing information of the top tracks in Spotify. This dataset was taken from Kaggle, a free dataset sharing platform."
   },
   {
     "objectID": "datastory.html#overall-conclusion",
     "href": "datastory.html#overall-conclusion",
     "title": "Data Story",
     "section": "Overall Conclusion",
-    "text": "Overall Conclusion\nIn summary, after analysing top song tracks on Spotify, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna both have the most number of featured top tracks (23) on Spotify. Despite that, the artist with the highest popularity levels of his featured songs is Eminem (72.33).\nSweater Weather was the most popular song, with a popularity value of 89/100.\nThe explicit content of a song does contribute to the popularity of the song, but to a small extent.\nOther song attributes like tempo, speechiness, loudness, acousticness and valence impact song popularity to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\nThank you for reading!"
+    "text": "Overall Conclusion\nIn summary, here are my key findings from conducting several data visualisations:\n\nDrake and Rihanna are the top 2 artists with most number of featured top tracks, at 23 songs each. Despite that, out of the top 10 artists, the artist who has the highest popularity level for his featured songs is Eminem (72.33).\nSweater Weather was the most popular song with a popularity value of 89/100.\nWhether a song was explicit or not does affect song popularity. Explicit songs were slightly more popular.\nOther song attributes such as tempo, speechiness, loudness, acousticness and valence does affect song popularity, but to a small extent. All increase song popularity except valence, which has a negative association with song popularity.\n\nThank you for reading!"
   }
 ]
