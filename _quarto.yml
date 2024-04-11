@@ -12,7 +12,6 @@ website:
         text: My Project
       - href: datastory.qmd
         text: Data Story
-      
 
 format:
   html:
