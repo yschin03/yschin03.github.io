@@ -13,7 +13,7 @@ The main question I wish to answer is **"What determines the extent of popularit
 
 Here is a breakdown of the general statistics for the cleaned dataset.
 
-### 1.1 Number of songs and artists
+#### **1.1 Number of songs and artists**
 
 Number of artists:
 
@@ -35,7 +35,7 @@ nrow(df)
 
 ```
 
-### 1.2 Songs Per Year
+#### **1.2 Songs Per Year**
 
 The bar plot below consolidates the number of songs released for each year, between 1999 and 2019. Hover over each respective bar to see the individual values.
 
@@ -74,7 +74,7 @@ p
 
 <p style="color:#6200EA;">2012 has the highest number of songs, at 113 songs.</p>
 
-### 1.3 Songs Per Artist - Top 100 Artists
+#### **1.3 Songs Per Artist - Top 100 Artists**
 
 The interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.
 
@@ -88,7 +88,9 @@ Adjust the slider to select your preferred number of artists to show in the char
 
 <p style="color:#6200EA;">The artist with the most number of featured songs is Drake and Rihanna, who both have 23 songs.</p>
 
-### 1.4 Average Popularity of Songs for Top 10 Artists
+#### **1.4 Average Popularity of Songs for Top 10 Artists**
+
+The scatter plot below showcases the average popularity levels of the top 10 artists. It is colour coded based on level of popularity. This section follows up from 1.3, which arranges artists from highest to lowest number of songs featured in the Spotify Top Tracks dataset.
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(dplyr)
@@ -129,7 +131,7 @@ plot
 
 <p style="color:#6200EA;">Among the top 10 artists with the most songs featured in this Spotify Top Tracks playlist, the artist which has the highest average popularity is Eminem, followed by Rihanna then Calvis Harris.</p>
 
-### 1.5 Top 25 Songs Based On Popularity
+#### **1.5 Top 25 Songs Based On Popularity**
 
 Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
 
@@ -172,7 +174,7 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
 
 ## 2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)
 
-### 2.1 Songs Containing Explicit Content
+#### **2.1 Songs Containing Explicit Content**
 
 This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
 
@@ -219,7 +221,7 @@ print(pie_chart)
 
 <p style="color:#6200EA;">27.6%, or the minority of the songs in this dataset, are explicit.</p>
 
-### 2.2 Songs Containing Explicit Content By Year
+#### **2.2 Songs Containing Explicit Content By Year**
 
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
@@ -256,7 +258,7 @@ plot
 
 <p style="color:#6200EA;">2018 contained the most number of explicit songs, at 49 songs, while 1999 contained the least, at 8 songs.</p>
 
-### 2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)
+#### **2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)**
 
 The box plots below visualises the popularity of songs based on whether they are explicit or not.
 
@@ -310,7 +312,7 @@ plot
 
 Firstly, let's take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence.
 
-### 3.1 Distribution of Different Song Attributes
+#### **3.1 Distribution of Different Song Attributes**
 
 ```{=html}
 
@@ -336,11 +338,11 @@ kable(findings) %>%
   kable_styling()
 ```
 
-### 3.2 Individual Analysis of Impact of Song Attributes on Popularity
+#### **3.2 Individual Analysis of Impact of Song Attributes on Popularity**
 
 Scatter plots, regression lines and correlation coeffients were portrayed to analyse the relationship between each individual song attribute and popularity.
 
-#### 3.2.1 Effect of Speechiness on Popularity
+##### **3.2.1 Effect of Speechiness on Popularity**
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -375,7 +377,7 @@ print(paste("Correlation coefficient between speechiness and popularity:", round
 
 ```
 
-#### 3.2.2 Effect of Tempo on Popularity
+##### **3.2.2 Effect of Tempo on Popularity**
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -409,7 +411,7 @@ print(paste("Correlation coefficient between tempo and popularity:", round(corre
 
 ```
 
-#### 3.2.3 Effect of Loudness on Popularity
+##### **3.2.3 Effect of Loudness on Popularity**
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -444,7 +446,7 @@ print(paste("Correlation coefficient between loudness and popularity:", round(co
 
 ```
 
-#### 3.2.4 Effect of Acousticness on Popularity
+##### **3.2.4 Effect of Acousticness on Popularity**
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -479,7 +481,7 @@ print(paste("Correlation coefficient between acousticness and popularity:", roun
 
 ```
 
-#### 3.2.5 Effect of Valence on Popularity
+##### **3.2.5 Effect of Valence on Popularity**
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -514,7 +516,7 @@ print(paste("Correlation coefficient between valence and popularity:", round(cor
 
 ```
 
-### 3.3 Overall findings
+#### **3.3 Overall findings**
 
 <p style="color:#6200EA;">Table consolidating correlation coefficients of all 5 song attributes:</p>
 
