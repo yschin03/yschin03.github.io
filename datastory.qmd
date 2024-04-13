@@ -342,33 +342,19 @@ kable(findings) %>%
 
 Scatter plots, regression lines and correlation coeffients were portrayed to analyse the relationship between each individual song attribute and popularity.
 
-##### **3.2.1 Effect of Speechiness on Popularity**
+##### **Scatterplots**
 
-```{r, echo = FALSE, message =FALSE, warning = FALSE}
-library(ggplot2)
+```{=html}
 
-
-# Convert the tempo column to numeric
-df$speechiness <- as.numeric(df$speechiness)
-
-# Create the scatter plot using ggplot
-plot <- ggplot(df, aes(x = speechiness, y = popularity, color = speechiness)) +
-  geom_point() +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
-                         midpoint = median(df$speechiness), space = "Lab") +
-  theme_minimal() +
-  theme(legend.position = "right") +
-  labs(title = "Speechiness Versus Popularity",
-       x = "Speechiness",
-       y = "Popularity")
-
-plot
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App4/"> </iframe>
 ```
 
-I further calculated the correlation coefficient to confirm the association between speechiness and popularity.
+#### **Correlation Coefficient of Each Plot**
 
-```{r, message = FALSE }
+
+I further calculated the correlation coefficient to confirm the association between the different song attributes and popularity.
+
+```{r, message = FALSE, eval = FALSE, echo = FALSE}
 library(tidyverse)
 df <- read_csv("df.csv")
 
@@ -377,32 +363,8 @@ print(paste("Correlation coefficient between speechiness and popularity:", round
 
 ```
 
-##### **3.2.2 Effect of Tempo on Popularity**
 
-```{r, echo = FALSE, message =FALSE, warning = FALSE}
-library(ggplot2)
-
-
-# Convert the tempo column to numeric
-df$tempo <- as.numeric(df$tempo)
-
-# Create the scatter plot using ggplot
-plot <- ggplot(df, aes(x = tempo, y = popularity, color = tempo)) +
-  geom_point() +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
-                         midpoint = median(df$tempo), space = "Lab") +
-  theme_minimal() +
-  theme(legend.position = "right") +
-  labs(title = "Tempo Versus Popularity",
-       x = "Tempo",
-       y = "Popularity")
-plot
-```
-
-I further calculated the correlation coefficient to confirm the association between tempo and popularity.
-
-```{r, message = FALSE }
+```{r, message = FALSE, eval = FALSE, echo = FALSE}
 library(tidyverse)
 df <- read_csv("df.csv")
 
@@ -411,33 +373,8 @@ print(paste("Correlation coefficient between tempo and popularity:", round(corre
 
 ```
 
-##### **3.2.3 Effect of Loudness on Popularity**
 
-```{r, echo = FALSE, message =FALSE, warning = FALSE}
-library(ggplot2)
-
-
-# Convert the tempo column to numeric
-df$loudness <- as.numeric(df$loudness)
-
-# Create the scatter plot using ggplot
-plot <- ggplot(df, aes(x = loudness, y = popularity, color = loudness)) +
-  geom_point() +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
-                         midpoint = median(df$loudness), space = "Lab") +
-  theme_minimal() +
-  theme(legend.position = "right") +
-  labs(title = "Loudness Versus Popularity",
-       x = "Loudness",
-       y = "Popularity")
-
-plot
-```
-
-I further calculated the correlation coefficient to confirm the association between loudness and popularity.
-
-```{r, message = FALSE }
+```{r, message = FALSE, eval = FALSE, echo = FALSE}
 library(tidyverse)
 df <- read_csv("df.csv")
 
@@ -446,33 +383,8 @@ print(paste("Correlation coefficient between loudness and popularity:", round(co
 
 ```
 
-##### **3.2.4 Effect of Acousticness on Popularity**
 
-```{r, echo = FALSE, message =FALSE, warning = FALSE}
-library(ggplot2)
-
-
-# Convert the tempo column to numeric
-df$acousticness <- as.numeric(df$acousticness)
-
-# Create the scatter plot using ggplot
-plot <- ggplot(df, aes(x = acousticness, y = popularity, color = acousticness)) +
-  geom_point() +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_gradient2(low = "#000033", mid = "mediumpurple", high = "red",
-                         midpoint = median(df$acousticness), space = "Lab") +
-  theme_minimal() +
-  theme(legend.position = "right") +
-  labs(title = "Acousticness Versus Popularity",
-       x = "Acousticness",
-       y = "Popularity")
-
-plot
-```
-
-I further calculated the correlation coefficient to confirm the association between acousticness and popularity.
-
-```{r, message = FALSE }
+```{r, message = FALSE, eval = FALSE, echo = FALSE}
 library(tidyverse)
 df <- read_csv("df.csv")
 
@@ -481,33 +393,7 @@ print(paste("Correlation coefficient between acousticness and popularity:", roun
 
 ```
 
-##### **3.2.5 Effect of Valence on Popularity**
-
-```{r, echo = FALSE, message =FALSE, warning = FALSE}
-library(ggplot2)
-
-
-# Convert the tempo column to numeric
-df$loudness <- as.numeric(df$valence)
-
-# Create the scatter plot using ggplot
-plot <- ggplot(df, aes(x = valence, y = popularity, color = valence)) +
-  geom_point() +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_gradient2(low = "darkblue", mid = "mediumpurple", high = "red",
-                         midpoint = median(df$valence), space = "Lab") +
-  theme_minimal() +
-  theme(legend.position = "right") +
-  labs(title = "Valence Versus Popularity",
-       x = "Valence",
-       y = "Popularity")
-
-plot
-```
-
-I further calculated the correlation coefficient to confirm the association between valence and popularity.
-
-```{r, message = FALSE }
+```{r, message = FALSE, eval = FALSE, echo = FALSE}
 library(tidyverse)
 df <- read_csv("df.csv")
 
@@ -516,9 +402,7 @@ print(paste("Correlation coefficient between valence and popularity:", round(cor
 
 ```
 
-#### **3.3 Overall findings**
-
-<p style="color:#6200EA;">Table consolidating correlation coefficients of all 5 song attributes:</p>
+**Table consolidating correlation coefficients of all 5 song attributes:**
 
 ```{r, echo = FALSE}
 # Create a data frame
@@ -532,6 +416,8 @@ kable(findings) %>%
   kable_styling()
 
 ```
+
+#### **3.3 Overall findings**
 
 <p style="color:#6200EA;">Overall, the five song attributes: speechiness, tempo, loudness, acousticness and valence do not have significant effects on song popularity. All have weak associations with popularity. Notably, speechiness, tempo, loudness and acousticness are positively associated with popularity, while only valence is negatively associated.</p>
 
