@@ -113,6 +113,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction-an-overview-of-spotify" id="toc-introduction-an-overview-of-spotify" class="nav-link" data-scroll-target="#introduction-an-overview-of-spotify">Introduction: An overview of Spotify</a></li>
   <li><a href="#why-this-dataset" id="toc-why-this-dataset" class="nav-link" data-scroll-target="#why-this-dataset">Why this dataset?</a></li>
   <li><a href="#main-problem-statement" id="toc-main-problem-statement" class="nav-link" data-scroll-target="#main-problem-statement">Main Problem Statement</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data Cleaning</a></li>
+  <li><a href="#names-and-meanings-of-variables-in-cleaned-dataset" id="toc-names-and-meanings-of-variables-in-cleaned-dataset" class="nav-link" data-scroll-target="#names-and-meanings-of-variables-in-cleaned-dataset">Names and Meanings of Variables in Cleaned Dataset</a></li>
   </ul>
 </nav>
     </div>
@@ -154,6 +156,27 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="main-problem-statement">Main Problem Statement</h2>
 <p>In my <a href="https://yschin03.github.io/datastory.html">data story</a>, I will be analysing various song properties and their relationships with song popularity.</p>
 <p>The main question I wish to answer is <strong>“What determines the extent of popularity of songs in this Spotify Top Tracks dataset?”</strong></p>
+</section>
+<section id="data-cleaning" class="level2">
+<h2 class="anchored" data-anchor-id="data-cleaning">Data Cleaning</h2>
+<p>I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.</p>
+<p>The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019.</p>
+<p>You can view both original and cleaned datasets here:</p>
+
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
+</section>
+<section id="names-and-meanings-of-variables-in-cleaned-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="names-and-meanings-of-variables-in-cleaned-dataset">Names and Meanings of Variables in Cleaned Dataset</h2>
+<p>“artist” refers to the name of the Artist.</p>
+<p>“song” refers to the name of the song track.</p>
+<p>“explicit” refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.</p>
+<p>“year” refers to the release year of the track.</p>
+<p>“popularity” refers to the popularity level of the track. The higher the value the more popular the song is.</p>
+<p>“speechiness” refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</p>
+<p>“tempo” refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</p>
+<p>“loudness” refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.</p>
+<p>“acousticness” refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</p>
+<p>“valence” refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g.&nbsp;happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g.&nbsp;sad, depressed, angry). It measures from 0.0 to 1.0.</p>
 
 
 </section>

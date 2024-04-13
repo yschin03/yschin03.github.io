@@ -24,5 +24,36 @@ In my [data story](https://yschin03.github.io/datastory.html), I will be analysi
 
 The main question I wish to answer is **"What determines the extent of popularity of songs in this Spotify Top Tracks dataset?"**
 
+## Data Cleaning
 
+I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.
 
+The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019.
+
+You can view both original and cleaned datasets here:
+
+```{=html}
+
+<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
+```
+## Names and Meanings of Variables in Cleaned Dataset
+
+"artist" refers to the name of the Artist.
+
+"song" refers to the name of the song track.
+
+"explicit" refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.
+
+"year" refers to the release year of the track.
+
+"popularity" refers to the popularity level of the track. The higher the value the more popular the song is.
+
+"speechiness" refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+
+"tempo" refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+
+"loudness" refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+
+"acousticness" refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
+
+"valence" refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0.

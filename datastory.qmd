@@ -1,42 +1,7 @@
 ---
 title: "Data Story"
 ---
-
-# Data Cleaning
-
-I have cleaned the dataset by removing duplicate and NA values, as well as selecting only the relevant columns required for my data analysis.
-
-The original dataset had songs spanning from year 1998 to year 2020, but was not representative of the top songs from the entire year of 1998 as well as year 2020. This is because the data only considered songs from the end of 1998 and the start of 2020, instead of the whole year. To ensure that there are no sudden abnormalities in data trends, I have narrowed the data to cover only songs between years 1999 to 2019.
-
-You can view both original and cleaned datasets here:
-
-```{=html}
-
-<iframe height="400" width="100%" frameborder="no" src="https://edwxgo-yin0shuen-chin.shinyapps.io/App1/"> </iframe>
-```
-## Names and Meanings of Variables in Cleaned Dataset
-
-"artist" refers to the name of the Artist.
-
-"song" refers to the name of the song track.
-
-"explicit" refers to whether the lyrics or content of a song or a music video contain one or more of the criteria which could be considered offensive or unsuitable for children.
-
-"year" refers to the release year of the track.
-
-"popularity" refers to the popularity level of the track. The higher the value the more popular the song is.
-
-"speechiness" refers to the presence of spoken words in a sound track. The greater the presence of speech-like qualities, the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are likely made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
-
-"tempo" refers to the overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
-
-"loudness" refers to the overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
-
-"acousticness" refers to the confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
-
-"valence" refers to the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). It measures from 0.0 to 1.0.
-
-# Data Visualisation
+## Data Visualisation
 
 Below, I will be analysing various song properties and their relationships with song popularity.
 
@@ -44,11 +9,11 @@ The main question I wish to answer is **"What determines the extent of popularit
 
 ------------------------------------------------------------------------
 
-## [1.0 Overview Statistics]{.underline}
+## 1.0 Overview Statistics
 
 Here is a breakdown of the general statistics for the cleaned dataset.
 
-## 1.1 Number of songs and artists
+### 1.1 Number of songs and artists
 
 Number of artists:
 
@@ -70,7 +35,7 @@ nrow(df)
 
 ```
 
-## 1.2 Songs Per Year
+### 1.2 Songs Per Year
 
 The bar plot below consolidates the number of songs released for each year, between 1999 and 2019. Hover over each respective bar to see the individual values.
 
@@ -109,7 +74,7 @@ p
 
 <p style="color:#6200EA;">2012 has the highest number of songs, at 113 songs.</p>
 
-## 1.3 Songs Per Artist - Top 100 Artists
+### 1.3 Songs Per Artist - Top 100 Artists
 
 The interactive bar chart below consolidates data on the number of songs released by artists featured in the dataset of top Spotify tracks, arranged from artists with the highest number of songs featured to lowest.
 
@@ -123,8 +88,7 @@ Adjust the slider to select your preferred number of artists to show in the char
 
 <p style="color:#6200EA;">The artist with the most number of featured songs is Drake and Rihanna, who both have 23 songs.</p>
 
-
-## 1.4 Average Popularity of Songs for Top 10 Artists
+### 1.4 Average Popularity of Songs for Top 10 Artists
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(dplyr)
@@ -165,7 +129,7 @@ plot
 
 <p style="color:#6200EA;">Among the top 10 artists with the most songs featured in this Spotify Top Tracks playlist, the artist which has the highest average popularity is Eminem, followed by Rihanna then Calvis Harris.</p>
 
-## 1.5 Top 25 Songs Based On Popularity
+### 1.5 Top 25 Songs Based On Popularity
 
 Line graph features the top 25 songs from the dataset, arranged in descending order based on popularity level.
 
@@ -206,9 +170,9 @@ ggplotly(p, tooltip = c("song", "popularity")) %>%
 
 <p style="color:#6200EA;">The most popular song is Sweater Weather, with a popularity rating of 89 out of 100.</p>
 
-## [2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)]{.underline}
+## 2.0 How does the explicit value of a song affect its popularity? (Categorical Variable)
 
-## 2.1 Songs Containing Explicit Content
+### 2.1 Songs Containing Explicit Content
 
 This simple pie chart below clearly illustrates the percentage of songs which contain explicit content.
 
@@ -255,7 +219,7 @@ print(pie_chart)
 
 <p style="color:#6200EA;">27.6%, or the minority of the songs in this dataset, are explicit.</p>
 
-## 2.2 Songs Containing Explicit Content By Year
+### 2.2 Songs Containing Explicit Content By Year
 
 The area plot below illustrates the relationship between the year of song published and explicit songs.
 
@@ -292,7 +256,7 @@ plot
 
 <p style="color:#6200EA;">2018 contained the most number of explicit songs, at 49 songs, while 1999 contained the least, at 8 songs.</p>
 
-## 2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)
+### 2.3 How Does Explicit Level of Song Impact Song Popularity? (Categorical Variable)
 
 The box plots below visualises the popularity of songs based on whether they are explicit or not.
 
@@ -342,11 +306,11 @@ plot
 
 <p style="color:#6200EA;">Overall, I can conclude that popularity is not significantly affected by whether songs are explicit or not.</p>
 
-## [3.0 How Does Different Song Attributes Affect Song Popularity? (Numeric variables)]{.underline}
+## 3.0 How Does Different Song Attributes Affect Song Popularity? (Numeric variables)
 
 Firstly, let's take a look at the distribution of different numeric song attributes using histograms. The attributes that I will be focusing on are Speechiness, Tempo, Loudness, Acousticness and Valence.
 
-## 3.1 Distribution of Different Song Attributes
+### 3.1 Distribution of Different Song Attributes
 
 ```{=html}
 
@@ -372,12 +336,11 @@ kable(findings) %>%
   kable_styling()
 ```
 
+### 3.2 Individual Analysis of Impact of Song Attributes on Popularity
 
-## 3.2 Individual Analysis of Impact of Song Attributes on Popularity
+Scatter plots, regression lines and correlation coeffients were portrayed to analyse the relationship between each individual song attribute and popularity.
 
-Scatter plots, regression lines and correlation coeffients were portrayed to analyse the relationship between each individual song attribute and popularity. 
-
-## 3.2.1 Effect of Speechiness on Popularity 
+#### 3.2.1 Effect of Speechiness on Popularity
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -400,6 +363,7 @@ plot <- ggplot(df, aes(x = speechiness, y = popularity, color = speechiness)) +
 
 plot
 ```
+
 I further calculated the correlation coefficient to confirm the association between speechiness and popularity.
 
 ```{r, message = FALSE }
@@ -410,7 +374,8 @@ correlation <- cor(df$speechiness, df$popularity)
 print(paste("Correlation coefficient between speechiness and popularity:", round(correlation, 3)))
 
 ```
-## 3.2.2 Effect of Tempo on Popularity 
+
+#### 3.2.2 Effect of Tempo on Popularity
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -432,6 +397,7 @@ plot <- ggplot(df, aes(x = tempo, y = popularity, color = tempo)) +
        y = "Popularity")
 plot
 ```
+
 I further calculated the correlation coefficient to confirm the association between tempo and popularity.
 
 ```{r, message = FALSE }
@@ -443,8 +409,7 @@ print(paste("Correlation coefficient between tempo and popularity:", round(corre
 
 ```
 
-
-## 3.2.3 Effect of Loudness on Popularity 
+#### 3.2.3 Effect of Loudness on Popularity
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -479,8 +444,7 @@ print(paste("Correlation coefficient between loudness and popularity:", round(co
 
 ```
 
-
-## 3.2.4 Effect of Acousticness on Popularity 
+#### 3.2.4 Effect of Acousticness on Popularity
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -503,6 +467,7 @@ plot <- ggplot(df, aes(x = acousticness, y = popularity, color = acousticness)) 
 
 plot
 ```
+
 I further calculated the correlation coefficient to confirm the association between acousticness and popularity.
 
 ```{r, message = FALSE }
@@ -514,7 +479,7 @@ print(paste("Correlation coefficient between acousticness and popularity:", roun
 
 ```
 
-## 3.2.5 Effect of Valence on Popularity 
+#### 3.2.5 Effect of Valence on Popularity
 
 ```{r, echo = FALSE, message =FALSE, warning = FALSE}
 library(ggplot2)
@@ -537,6 +502,7 @@ plot <- ggplot(df, aes(x = valence, y = popularity, color = valence)) +
 
 plot
 ```
+
 I further calculated the correlation coefficient to confirm the association between valence and popularity.
 
 ```{r, message = FALSE }
@@ -548,9 +514,10 @@ print(paste("Correlation coefficient between valence and popularity:", round(cor
 
 ```
 
-## 3.2.6 Overall findings 
+### 3.3 Overall findings
 
-<p style="color:#6200EA;">Table consolidating correlation coefficients of all 5 song attributes:</p> 
+<p style="color:#6200EA;">Table consolidating correlation coefficients of all 5 song attributes:</p>
+
 ```{r, echo = FALSE}
 # Create a data frame
 findings <- data.frame(
@@ -563,20 +530,21 @@ kable(findings) %>%
   kable_styling()
 
 ```
+
 <p style="color:#6200EA;">Overall, the five song attributes: speechiness, tempo, loudness, acousticness and valence do not have significant effects on song popularity. All have weak associations with popularity. Notably, speechiness, tempo, loudness and acousticness are positively associated with popularity, while only valence is negatively associated.</p>
 
-<p style="color:#6200EA;">Diving deeper into each individual correlation coefficient, it is also seen that loudness is most strongly associated with popularity, followed by speechiness then acousticness. </p> 
+<p style="color:#6200EA;">Diving deeper into each individual correlation coefficient, it is also seen that loudness is most strongly associated with popularity, followed by speechiness then acousticness.</p>
 
 ## Overall Conclusion
 
 In summary, here are my key findings from conducting several data visualisations:
 
-1. Drake and Rihanna are the top 2 artists with most number of featured top tracks, at 23 songs each. Despite that, out of the top 10 artists, the artist who has the highest popularity level for his featured songs is Eminem (72.33).
+1.  Drake and Rihanna are the top 2 artists with most number of featured top tracks, at 23 songs each. Despite that, out of the top 10 artists, the artist who has the highest popularity level for his featured songs is Eminem (72.33).
 
-2. Sweater Weather was the most popular song with a popularity value of 89/100.
+2.  Sweater Weather was the most popular song with a popularity value of 89/100.
 
-3. Whether a song was explicit or not does affect song popularity. Explicit songs were slightly more popular.
+3.  Whether a song was explicit or not does affect song popularity. Explicit songs were slightly more popular.
 
-4. Other song attributes such as tempo, speechiness, loudness, acousticness and valence does affect song popularity, but to a small extent. All increase song popularity except valence, which has a negative association with song popularity.
+4.  Other song attributes such as tempo, speechiness, loudness, acousticness and valence does affect song popularity, but to a small extent. All increase song popularity except valence, which has a negative association with song popularity.
 
 Thank you for reading!
